@@ -6,11 +6,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/',
   assetsInclude: ['**/*.JPG', '**/*.PNG', '**/*.jpg', '**/*.jpeg'],
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [vue(), vueDevTools()],
 
   server: {
     port: 5000
