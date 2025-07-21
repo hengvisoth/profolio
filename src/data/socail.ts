@@ -5,7 +5,7 @@ export const socail = {
   },
   telegram: {
     name: 'telegram',
-    url: 'https://t.me/hengvisoth'
+    url: 'https://t.me/visothhh'
   },
   whatsApp: {
     name: 'whatsApp',

@@ -41,9 +41,18 @@ export const Technologies = {
     name: 'TypeScript',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg'
   },
+
   javascript: {
     name: 'JavaScript',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'
+  },
+  django: {
+    name: 'Django',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_x99ZQX1nudheXm864umbylPmZ2YcSM5fBQ&s'
+  },
+  awsec2: {
+    name: 'EC2',
+    logo: 'https://img.icons8.com/color/48/amazon-web-services.png'
   },
   flutter: {
     name: 'Flutter',
@@ -113,5 +122,32 @@ export const Technologies = {
     name: 'VueX',
     logo: 'https://rock-the-prototype.com/wp-content/uploads/2023/06/VueX.png'
   },
-
+  rds: {
+    name: 'AWS RDS',
+    logo: 'https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/1/aws-rds-5qblz3nvfjmipvbykjpba.png/aws-rds-o6rtmustsgv3emnpozj4.png?_a=DATAg1AAZAA0'
+  },
+  docker: {
+    name: 'Docker',
+    logo: 'https://img.icons8.com/color/56/docker.png'
+  },
+  linux: {
+    name: 'Linux',
+    logo: 'https://img.icons8.com/color/56/linux.png'
+  },
+  flask: {
+    name: 'Flask',
+    logo: 'https://img.icons8.com/color/56/flask.png'
+  },
+  websocket: {
+    name: 'WebSocket',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3A_U3kiS3uEpm6O8cMc_khbHDPLu8jPaN-A&s'
+  },
+  tensorFlow: {
+    name: 'TensorFlow',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToByVRS1Ad_iy0Gsv_1OEgOnfGeiAgaxU2ig&s'
+  },
+  googleMap: {
+    name: 'GoogleMap',
+    logo: 'https://img.freepik.com/premium-vector/google-maps-logo_578229-304.jpg'
+  }
 }

@@ -3,34 +3,24 @@
     class="w-full h-full lg:h-[720px] flex-row py-4 md:py-20 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-8 lg:gap-10"
   >
     <!-- left sides -->
-    <div
-      class="order-last md:order-first lg:order-first flex flex-col justify-between h-full"
-    >
+    <div class="order-last md:order-first lg:order-first flex flex-col justify-between h-full">
       <!-- index and role -->
       <div>
         <div>
-          <h1
-            class="text-main text-6xl md:text-8xl lg:text-9xl font-Angkor font-bold"
-          >
+          <h1 class="text-main text-6xl md:text-8xl lg:text-9xl font-Angkor font-bold">
             {{ projectCode }}
           </h1>
-          <h2
-            class=" font-bold text-primary text-sm-h2 md:text-md-h2 lg:text-lg-h2"
-          >
+          <h2 class="font-bold text-primary text-sm-h2 md:text-md-h2 lg:text-lg-h2">
             {{ title }}
           </h2>
           <div
             class="flex justify-between flex-col md:flex-row lg:flex-row items-start md:items-center lg:items-center gap-1 md:gap-2 lg:gap-2"
           >
-            <p
-              class="text-main font-normal text-base md:text-lg lg:text-lg"
-            >
+            <p class="text-main font-normal text-base md:text-lg lg:text-lg">
               {{ roleAs }}
             </p>
             <!-- Date range -->
-            <p
-              class="text-softwhite font-normal text-xs md:text-base lg:text-xs"
-            >
+            <p class="text-softwhite font-normal text-xs md:text-base lg:text-xs">
               <span class="font-semibold">From:</span> {{ startDate }}
               <span class="font-semibold">To:</span> {{ endDate }}
             </p>
@@ -46,9 +36,9 @@
       </div>
 
       <!-- ------------------------- -->
-      <div  class="py-10">
+      <div class="py-10">
         <!-- Technologies -->
-        <div class="flex flex-wrap gap-4 ">
+        <div class="flex flex-wrap gap-4">
           <!-- Display technologies in the desired format -->
           <span
             class="flex items-center font-medium text-base cursor-pointer"
@@ -58,14 +48,13 @@
             <img
               :src="tech.icon?.logo"
               :alt="tech.name"
-              class="w-4 md:w-5 lg:w-5 h-4 md:h-5 lg:h-5 inline-block mr-2 transition-transform transform hover:scale-110 object-cover"
+              class="w-4 md:w-5 lg:w-5 h-4 md:h-5 lg:h-5 inline-block mr-2 transition-transform transform hover:scale-110 object-cover bg-white p-1 rounded"
             />
-            <span class="text-xs md:text-sm lg:text-sm text-white hover:text-orange transition-colors">{{
-              tech.name
-            }}</span>
-            <span v-if="index < technologies.length - 1" class="mx-2 text-textGray"
-              >,</span
+            <span
+              class="text-xs md:text-sm lg:text-sm text-white hover:text-orange transition-colors"
+              >{{ tech.name }}</span
             >
+            <span v-if="index < technologies.length - 1" class="mx-2 text-textGray">,</span>
           </span>
         </div>
 
@@ -108,7 +97,7 @@
     </div>
 
     <!-- slider -->
-    <div class="h-full  rounded-xl  flex justify-center items-center">
+    <div class="h-full rounded-xl flex justify-center items-center">
       <div id="controls-carousel" class="relative w-full" data-carousel="static">
         <div class="relative flex items-center justify-center overflow-hidden my-auto">
           <Swiper
@@ -121,9 +110,10 @@
                 v-if="index === activeIndex"
                 :src="project.imageUrl"
                 data-aos="zoom-in"
-                class="rounded-xl max-w-full md:max-w-[500px]  lg:max-w-[500px] h-[320px] md:h-[500x]  lg:h-[500px] object-container md:object-container lg:object-contain mx-auto"
+                class="rounded-xl max-w-full md:max-w-[500px] lg:max-w-[500px] h-[320px] md:h-[500px] lg:h-[500px] object-contain mx-auto bg-white p-2 shadow"
                 alt="Project Image"
               />
+
               <!-- <img
                 :v-if="index == activeIndex"
                 :src="project.imageUrl"
@@ -185,73 +175,73 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { computed } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import { projectsData } from "../data/project";
-import type { projectType } from "../types/project.dto";
-import { Icon } from "@iconify/vue";
+import { ref, onMounted } from 'vue'
+import { computed } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import { projectsData } from '../data/project'
+import type { projectType } from '../types/project.dto'
+import { Icon } from '@iconify/vue'
 
 // Reactive variables
-const activeIndex = ref<number>(0);
-const projectCode = ref<string>("01");
-const projects = ref<projectType[]>(projectsData);
-const roleAs = ref<string | null>("");
-const title = ref<string | null>("");
-const gitHubUrl = ref<string>("");
-const short_desc = ref<string | null>("");
-const technologies = ref<{ name: string; icon: any }[] | []>([{ name: "", icon: "" }]);
-const startDate = ref<string>("None");
-const endDate = ref<string>("None");
-const isPrevDisabled = ref<boolean>(true);
-const isNextDisabled = ref<boolean>(false);
+const activeIndex = ref<number>(0)
+const projectCode = ref<string>('01')
+const projects = ref<projectType[]>(projectsData)
+const roleAs = ref<string | null>('')
+const title = ref<string | null>('')
+const gitHubUrl = ref<string>('')
+const short_desc = ref<string | null>('')
+const technologies = ref<{ name: string; icon: any }[] | []>([{ name: '', icon: '' }])
+const startDate = ref<string>('None')
+const endDate = ref<string>('None')
+const isPrevDisabled = ref<boolean>(true)
+const isNextDisabled = ref<boolean>(false)
 
 // Function to handle slide changes
 const onSlideChange = (swiper: any) => {
-  activeIndex.value = swiper.activeIndex;
-  updateDetails();
-};
+  activeIndex.value = swiper.activeIndex
+  updateDetails()
+}
 
 // Dummy function for Swiper instance (optional)
 const onSwiper = (swiper: any) => {
-  console.log("Swiper instance:", swiper);
-};
+  console.log('Swiper instance:', swiper)
+}
 
 // Custom navigation functions
 const slidePrev = () => {
-  const swiperElement = document.querySelector(".mySwiper") as HTMLElement & {
-    swiper: any;
-  };
-  swiperElement?.swiper.slidePrev();
-  updateDetails();
-};
+  const swiperElement = document.querySelector('.mySwiper') as HTMLElement & {
+    swiper: any
+  }
+  swiperElement?.swiper.slidePrev()
+  updateDetails()
+}
 
 const slideNext = () => {
-  const swiperElement = document.querySelector(".mySwiper") as HTMLElement & {
-    swiper: any;
-  };
-  swiperElement?.swiper.slideNext();
-  updateDetails();
-};
+  const swiperElement = document.querySelector('.mySwiper') as HTMLElement & {
+    swiper: any
+  }
+  swiperElement?.swiper.slideNext()
+  updateDetails()
+}
 
 // Function to update details based on activeIndex
 const updateDetails = () => {
-  gitHubUrl.value = projects.value[activeIndex.value]?.gitHubRepo || "";
-  technologies.value = projects.value[activeIndex.value]?.technologies || [];
-  projectCode.value = projects.value[activeIndex.value]?.code || "";
-  roleAs.value = projects.value[activeIndex.value]?.role || "";
-  title.value = projects.value[activeIndex.value]?.title || "";
-  short_desc.value = projects.value[activeIndex.value]?.short_desc || "";
-  isPrevDisabled.value = activeIndex.value === 0;
-  isNextDisabled.value = activeIndex.value === projects.value.length - 1;
-  startDate.value = projects.value[activeIndex.value]?.startDate || "None";
-  endDate.value = projects.value[activeIndex.value]?.endDate || "None";
-};
+  gitHubUrl.value = projects.value[activeIndex.value]?.gitHubRepo || ''
+  technologies.value = projects.value[activeIndex.value]?.technologies || []
+  projectCode.value = projects.value[activeIndex.value]?.code || ''
+  roleAs.value = projects.value[activeIndex.value]?.role || ''
+  title.value = projects.value[activeIndex.value]?.title || ''
+  short_desc.value = projects.value[activeIndex.value]?.short_desc || ''
+  isPrevDisabled.value = activeIndex.value === 0
+  isNextDisabled.value = activeIndex.value === projects.value.length - 1
+  startDate.value = projects.value[activeIndex.value]?.startDate || 'None'
+  endDate.value = projects.value[activeIndex.value]?.endDate || 'None'
+}
 
 // Set initial values when the component is mounted
 onMounted(() => {
-  console.log("Component mounted");
-  updateDetails();
-});
+  console.log('Component mounted')
+  updateDetails()
+})
 </script>

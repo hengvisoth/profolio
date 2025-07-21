@@ -1,3 +1,4 @@
+import { icon } from '@fortawesome/fontawesome-svg-core'
 import { Technologies } from './icon'
 import type { projectType } from '@/types/project.dto'
 
@@ -101,6 +102,18 @@ export const projectsData: projectType[] = [
       {
         name: 'Tailwind CSS',
         icon: Technologies.tailwindcss
+      },
+      {
+        name: 'Django',
+        icon: Technologies.django
+      },
+      {
+        name: 'AWS',
+        icon: Technologies.awsEc2
+      },
+      {
+        name: 'RDS',
+        icon: Technologies.rds
       }
     ],
 
@@ -133,19 +146,30 @@ export const projectsData: projectType[] = [
     gitHubRepo: 'https://github.com/hengvisoth',
     demo: '',
 
-    // technologies: [
-    //     Technologies.nextjs,
-    //     Technologies.tailwindcss,
-    //     Technologies.typescript,
-    // ],
     technologies: [
       {
-        name: 'ReactJS',
-        icon: Technologies.reactjs
+        name: 'VueJS',
+        icon: Technologies.vuejs
       },
       {
         name: 'Tailwind CSS',
         icon: Technologies.tailwindcss
+      },
+      {
+        name: 'Flask',
+        icon: Technologies.flask
+      },
+      {
+        name: 'Docker',
+        icon: Technologies.docker
+      },
+      {
+        name: 'Linux',
+        icon: Technologies.linux
+      },
+      {
+        name: 'WebSocket',
+        icon: Technologies.websocket
       }
     ],
 
@@ -168,12 +192,32 @@ export const projectsData: projectType[] = [
     demo: '',
     technologies: [
       {
-        name: 'Nest Js',
-        icon: Technologies.nestjs
+        name: 'Vue JS',
+        icon: Technologies.vuejs
       },
       {
-        name: 'Postgre SQL',
-        icon: Technologies.postgresql
+        name: 'Tailwind CSS',
+        icon: Technologies.tailwindcss
+      },
+      {
+        name: 'Flutter',
+        icon: Technologies.flutter
+      },
+      {
+        name: 'Python',
+        icon: Technologies.python
+      },
+      {
+        name: 'Tensorflow',
+        icon: Technologies.tensorFlow
+      },
+      {
+        name: 'Docker',
+        icon: Technologies.docker
+      },
+      {
+        name: 'Linux',
+        icon: Technologies.linux
       }
     ],
 
@@ -202,6 +246,14 @@ export const projectsData: projectType[] = [
       {
         name: 'Tailwind CSS',
         icon: Technologies.tailwindcss
+      },
+      {
+        name: 'Docker',
+        icon: Technologies.docker
+      },
+      {
+        name: 'Linux',
+        icon: Technologies.linux
       }
     ],
 
@@ -224,12 +276,16 @@ export const projectsData: projectType[] = [
     demo: '',
     technologies: [
       {
-        name: 'Nuxt Js',
-        icon: Technologies.nuxtjs
+        name: 'Flutter',
+        icon: Technologies.flutter
       },
       {
-        name: 'Tailwind CSS',
-        icon: Technologies.tailwindcss
+        name: 'Firebase',
+        icon: Technologies.firebase
+      },
+      {
+        name: 'Google Map API',
+        icon: Technologies.googleMap
       }
     ],
 
