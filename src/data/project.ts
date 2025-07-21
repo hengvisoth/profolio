@@ -341,21 +341,27 @@ export const projectsData: projectType[] = [
     demo: '',
     technologies: [
       {
-        name: 'ASP.NET Core',
-        icon: Technologies?.dotNetCore
+        name: 'Vue JS',
+        icon: Technologies?.vuejs
       },
       {
-        name: 'SQL Server',
-        icon: Technologies?.sqlServer
+        name: 'Tailwind CSS',
+        icon: Technologies?.tailwindcss
       },
       {
-        name: 'Dapper ORM',
-        icon: Technologies?.dapper
+        name: 'TypeScript',
+        icon: Technologies?.typescript
       },
       {
-        name: 'Vue Js',
-        icon: Technologies.vuejs
+        name: 'Vite',
+        icon: Technologies?.vite
+      },
+      {
+        name : 'GSAP',
+        icon: Technologies?.gsap
       }
+    
+     
     ],
     screenshots: []
   }
