@@ -29,7 +29,6 @@
               class="text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold"
             >
               I am
-              <!-- <span class="font-semibold  ">Seanghor</span> -->
               <span class="font-semibold text-main">Visoth</span>
             </h1>
             <div

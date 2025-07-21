@@ -121,7 +121,7 @@
                 v-if="index === activeIndex"
                 :src="project.imageUrl"
                 data-aos="zoom-in"
-                class="rounded-xl max-w-full md:max-w-[500px]  lg:max-w-[500px] h-[320px] md:h-[500x]  lg:h-[500px] object-cover md:object-container lg:object-contain mx-auto"
+                class="rounded-xl max-w-full md:max-w-[500px]  lg:max-w-[500px] h-[320px] md:h-[500x]  lg:h-[500px] object-container md:object-container lg:object-contain mx-auto"
                 alt="Project Image"
               />
               <!-- <img
