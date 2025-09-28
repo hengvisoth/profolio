@@ -1,187 +1,228 @@
 <template>
-  <section class="mb-10 md:mb-20 lg:mb-32" id="home">
-    <div
-      class="z-60 max-w-[1440px] mx-auto px-6 md:px-24 lg:px-24 large:px-0 w-screen pt-[70px] md:pt-[80px] lg:pt-[80px] pb-10 md:pb-32 lg:pb-32"
-    >
+  <section id="home" class="mb-10 md:mb-20 lg:mb-32 overflow-hidden">
+    <div class="pointer-events-none absolute -right-40 -top-40 hidden lg:block">
       <div
-        class="h-full flex flex-col md:flex-row items-start justify-center md:justify-between space-y-6 md:space-y-0 lg:space-y-0 space-x-0 md:space-x-8 lg:space-x-10"
-      >
-        <!-- Ellipse-shaped image container (height 10% longer than width) -->
+        class="h-80 w-80 rounded-full bg-gradient-to-br from-main/60 via-accent/50 to-primary/70 blur-3xl opacity-70"
+      ></div>
+    </div>
+    <div
+      class="relative z-10 max-w-[1440px] mx-auto w-full px-6 md:px-16 lg:px-24 large:px-0 pt-[80px] md:pt-[96px] lg:pt-[120px] pb-14 md:pb-24 lg:pb-28"
+    >
+      <div class="relative grid items-center gap-12 lg:grid-cols-[minmax(0,420px)_1fr]">
+        <div data-aos="zoom-in" class="order-2 lg:order-1 flex w-full flex-col space-y-8">
+          <div
+            class="inline-flex items-center gap-2 self-start rounded-full bg-surface-strong px-4 py-1.5 text-xs uppercase tracking-[0.2em] ring-1 ring-divider backdrop-blur-brand"
+          >
+            <span class="h-2 w-2 rounded-full bg-main shadow-[0_0_12px_rgba(234,88,12,0.8)]"></span>
+            Available for opportunities
+          </div>
 
-        <div
-          data-aos="zoom-in"
-          class="relative z-60 w-[220px] md:w-[380px] lg:w-[420px] aspect-square md:aspect-[4/5] overflow-hidden rounded-full md:rounded-3xl border-4 border-primary shadow-lg hover:shadow-2xl transition-shadow duration-500"
-        >
-          <img
-            src="../../../public/pf.jpeg"
-            alt="Visoth Profile"
-            class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
-          />
-
-          <!-- Optional Gradient Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-br from-transparent to-black/10"></div>
-        </div>
-        <!-- Right Side Text Content -->
-        <div class="w-full md:w-3/5 lg:w-3/5 h-[600px] flex flex-col">
-          <div class="space-y-2 md:space-y-5 lg:space-y-6">
-            <h1
-              data-aos="fade-left"
-              class="text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold"
-            >
-              I am
-              <span class="font-semibold text-main">Visoth</span>
+          <div class="space-y-4 md:space-y-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+              Hey, I’m
+              <span
+                class="bg-gradient-to-r from-main via-accent to-primary bg-clip-text text-transparent"
+              >
+                Visoth
+              </span>
             </h1>
-            <div
-              data-aos="fade-right"
-              class="flex flex-row text-xl md:text-2xl lg:text-3xl font-medium"
-            >
-              <h1 class="flex items-center">A&nbsp;</h1>
 
+            <div
+              class="flex flex-wrap items-center gap-3 text-xl md:text-2xl lg:text-3xl font-medium text-softwhite/90"
+            >
+              <span class="text-softwhite/70">Crafting delightful web experiences as a</span>
               <vue-writer
-                class="flex items-center text-main"
-                :array="['Front-End Developer|']"
-                :eraseSpeed="50"
-                :typeSpeed="100"
-                :delay="1000"
+                class="bg-clip-text text-transparent bg-gradient-to-r from-main via-softwhite to-accent"
+                :array="['Front-End Developer|', 'UI Engineer|', 'Design System Lover|']"
+                :eraseSpeed="40"
+                :typeSpeed="90"
+                :delay="1200"
               />
             </div>
 
-            <p
-              data-aos="flip-up"
-              class="leading-relaxed md:leading-relaxed lg:leading-relaxed mx-auto"
-            >
-              I am a passionate <span class="text-main">Front-End</span> Developer with strong
-              technical skills in modern web technologies and UI frameworks. I specialize in
-              creating intuitive, responsive, and visually engaging user interfaces. With a keen eye
-              for design and performance, I focus on building seamless user experiences across
-              devices. I thrive in dynamic environments and continuously adapt to emerging front-end
-              tools and trends to deliver impactful, user-centered web applications.
+            <p class="max-w-xl text-base md:text-lg text-softwhite/80 leading-relaxed">
+              I craft responsive, accessible interfaces with modern Vue ecosystems. My work blends
+              thoughtful interaction design with performance-focused engineering, resulting in
+              experiences that feel polished, immersive, and fast on every device.
             </p>
           </div>
 
-          <!-- Social Blocks -->
-          <div
-            data-aos="fade-left"
-            class="my-5 md:my-5 lg:my-6 flex flex-row items-center justify-start space-x-3 md:space-x-3 lg:space-x-6 pl-2 md:pl-3 lg:pl-3"
-          >
-            <a :href="socailData.linkedin.url" target="_blank" rel="noopener noreferrer">
-              <font-awesome-icon
-                data-aos="fade-left"
-                data-aos-delay="0"
-                :icon="['fab', 'linkedin']"
-                class="w-5 md:w-5 lg:w-6 h-5 md:h-5 lg:h-6 flex items-center justify-center rounded-full border p-1.5 md:p-2 lg:p-2 transition-all transform hover:scale-110 active:scale-95 hover:bg-orange hover:text-white focus:outline-none cursor-pointer"
-              />
-            </a>
-            <a :href="socailData.github.url" target="_blank" rel="noopener noreferrer">
-              <font-awesome-icon
-                data-aos="fade-left"
-                data-aos-delay="200"
-                :icon="['fab', 'github']"
-                class="w-5 md:w-5 lg:w-6 h-5 md:h-5 lg:h-6 flex items-center justify-center rounded-full border p-1.5 md:p-2 lg:p-2 transition-all transform hover:scale-110 active:scale-95 hover:bg-orange hover:text-white focus:outline-none cursor-pointer"
-              />
-            </a>
-
-            <a :href="socailData.telegram.url" target="_blank" rel="noopener noreferrer">
-              <font-awesome-icon
-                data-aos="fade-left"
-                data-aos-delay="400"
-                :icon="['fab', 'telegram']"
-                class="w-5 md:w-5 lg:w-6 h-5 md:h-5 lg:h-6 flex items-center justify-center rounded-full border p-1.5 md:p-2 lg:p-2 transition-all transform hover:scale-110 active:scale-95 hover:bg-orange hover:text-white focus:outline-none cursor-pointer"
-              />
-            </a>
-
-            <a :href="socailData.facebook.url" target="_blank" rel="noopener noreferrer">
-              <font-awesome-icon
-                data-aos="fade-left"
-                data-aos-delay="600"
-                :icon="['fab', 'facebook']"
-                class="w-5 md:w-5 lg:w-6 h-5 md:h-5 lg:h-6 flex items-center justify-center rounded-full border p-1.5 md:p-2 lg:p-2 transition-all transform hover:scale-110 active:scale-95 hover:bg-orange hover:text-white focus:outline-none cursor-pointer"
-              />
-            </a>
-          </div>
-          <div class="flex flex-row space-x-6">
+          <div class="flex flex-wrap items-center gap-5">
             <button
               @click="handleContact"
               data-aos="fade-up"
-              data-aos-delay="650"
-              class="text-whiteLight text-sm md:text-sm lg:text-lg px-4 md:px-8 lg:px-10 py-2 md:py-3 lg:py-3 bg-primary rounded-lg font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl active:scale-95 active:bg-white focus:outline-none focus:ring-1 focus:ring- focus:ring-opacity-50"
+              data-aos-delay="150"
+              class="relative inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm md:text-base font-semibold text-background shadow-glow-warm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-18px_rgba(234,88,12,0.65)] active:scale-95"
             >
-              Contact Me
+              <Icon icon="solar:mailbox-bold" class="h-5 w-5" />
+              Let’s collaborate
             </button>
 
-            <a class="relative rounded-lg" href="/resume/Heng_RatanakVisoth_CV.pdf" download>
-              <button
+            <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
+              <span
                 data-aos="fade-up"
-                data-aos-delay="650"
-                class="relative px-4 md:px-8 lg:px-10 py-2 md:py-3 lg:py-3 border-2 rounded-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl active:scale-95 active:bg-orange-600 focus:outline-none focus:ring-1 focus:ring-orange-500 focus:ring-opacity-50 group breathing-effect"
+                data-aos-delay="220"
+                class="relative inline-flex items-center gap-2 overflow-hidden rounded-full px-[1px] py-[1px]"
               >
-                <span class="relative z-10 group-hover:text-main">Download CV</span>
                 <span
-                  class="absolute inset-0 bg-primary w-0 group-hover:w-full h-full transition-all duration-500 ease-in-out"
+                  class="absolute inset-0 bg-gradient-to-r from-main via-accent to-primary opacity-80 transition-opacity duration-300 group-hover:opacity-100"
                 ></span>
-              </button>
+                <span
+                  class="relative inline-flex items-center gap-2 rounded-full bg-surface px-6 py-3 text-sm md:text-base font-semibold text-softwhite backdrop-blur-brand ring-1 ring-divider transition-all duration-300 group-hover:-translate-y-1 group-hover:text-softwhite/90"
+                >
+                  <Icon icon="solar:download-square-broken" class="h-5 w-5" />
+                  Download CV
+                </span>
+              </span>
             </a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <p class="pr-2 text-sm uppercase tracking-[0.3em] text-softwhite/40">Find me on</p>
+            <template v-for="(item, index) in socialLinks" :key="index">
+              <a
+                :href="item.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider bg-surface text-softwhite/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-main/70 hover:text-main hover:shadow-glow"
+              >
+                <font-awesome-icon
+                  :icon="item.icon"
+                  class="h-4 w-4 transition-transform group-hover:scale-110"
+                />
+              </a>
+            </template>
+          </div>
+
+          <div class="grid w-full gap-4 pt-6 sm:grid-cols-3">
+            <div
+              v-for="stat in heroStats"
+              :key="stat.label"
+              class="rounded-2xl border border-divider bg-surface p-4 backdrop-blur-brand transition-transform duration-300 hover:-translate-y-1 hover:shadow-glow"
+            >
+              <p class="text-2xl font-semibold text-softwhite">{{ stat.value }}</p>
+              <p class="text-sm text-softwhite/60">{{ stat.label }}</p>
+              <p class="mt-1 text-xs text-softwhite/50">{{ stat.caption }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in-up" class="order-1 lg:order-2 mx-auto flex justify-center">
+          <div class="relative">
+            <span
+              class="absolute -inset-4 hidden md:block rounded-[40%] bg-gradient-to-br from-main/40 via-accent/30 to-primary/50 blur-2xl opacity-90"
+            ></span>
+            <div
+              class="relative w-[240px] md:w-[360px] lg:w-[420px] overflow-hidden rounded-[32px] border border-divider bg-surface-strong shadow-2xl backdrop-blur-brand"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"
+              ></div>
+              <img
+                src="../../../public/pf.jpeg"
+                alt="Visoth Profile"
+                class="relative z-10 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+              />
+            </div>
+
+            <span
+              v-for="floating in floatingIcons"
+              :key="floating.icon"
+              :class="['floating-icon', floating.position]"
+              :style="{ animationDelay: floating.delay }"
+            >
+              <Icon :icon="floating.icon" class="h-5 w-5 text-main" />
+            </span>
           </div>
         </div>
       </div>
     </div>
-    <div class="mt-auto mx-auto w-full flex items-center justify-center">
-      <div class="bg-primary h-[1px] rounded-md w-[60%] md:w-[40%] lg:w-[40%]"></div>
+    <div class="relative z-10 mt-8 flex w-full items-center justify-center">
+      <div class="h-[2px] w-[65%] max-w-xl rounded-full bg-divider"></div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { motionCover } from '../../config/motions/custom'
 import { VueWriter } from 'vue-writer'
 import { ref } from 'vue'
+import { Icon } from '@iconify/vue'
 import { socail } from '../../data/socail'
 
 const socailData = ref(socail)
+const socialLinks = [
+  { icon: ['fab', 'linkedin'], url: socailData.value.linkedin.url },
+  { icon: ['fab', 'github'], url: socailData.value.github.url },
+  { icon: ['fab', 'telegram'], url: socailData.value.telegram.url },
+  { icon: ['fab', 'facebook'], url: socailData.value.facebook.url }
+]
+
+const heroStats = [
+  {
+    value: '4+',
+    label: 'Years building UI',
+    caption: 'Hands-on with Vue, React, and design systems.'
+  },
+  {
+    value: '18+',
+    label: 'Projects shipped',
+    caption: 'From concept to launch with measurable impact.'
+  },
+  {
+    value: '5',
+    label: 'Teams collaborated',
+    caption: 'Cross-functional squads across product and design.'
+  }
+]
+
+const floatingIcons = [
+  {
+    icon: 'solar:code-square-bold-duotone',
+    position: '-left-10 top-6 hidden md:flex',
+    delay: '0s'
+  },
+  { icon: 'solar:palette-round-linear', position: '-right-6 top-8 hidden md:flex', delay: '1.4s' },
+  {
+    icon: 'solar:cpu-bolt-bold-duotone',
+    position: '-left-8 bottom-10 hidden md:flex',
+    delay: '2.2s'
+  }
+]
+
 const handleContact = () => {
   const mailtoLink = `https://mail.google.com/mail/u/0/?source=mailto&to=hengsoth68@gmail.com&fs=1&tf=cm`
   window.open(mailtoLink, '_blank')
 }
 </script>
 
-<style>
-@keyframes textColorChange {
-  0% {
-    color: rgb(183, 75, 75); /* Dark red-orange */
-  }
-  10% {
-    color: rgb(255, 99, 71); /* Tomato Red */
-  }
-  20% {
-    color: rgb(255, 69, 0); /* Orange Red */
-  }
-  30% {
-    color: rgb(255, 120, 30); /* Bright orange-ish red */
-  }
-  40% {
-    color: rgb(255, 200, 0); /* Yellowish-orange */
-  }
-  50% {
-    color: rgb(255, 165, 0); /* Standard Orange */
-  }
-  60% {
-    color: rgb(255, 140, 0); /* Deep orange */
-  }
-  70% {
-    color: rgb(255, 80, 0); /* Lighter red-orange */
-  }
-  80% {
-    color: rgb(255, 50, 0); /* Darker red-orange */
-  }
-  90% {
-    color: rgb(255, 200, 100); /* Light yellow-orange */
-  }
-  100% {
-    color: white; /* White */
-  }
+<style scoped>
+.floating-icon {
+  position: absolute;
+  display: flex;
+  height: 48px;
+  width: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.75);
+  box-shadow: 0 12px 32px -16px rgba(234, 88, 12, 0.6);
+  backdrop-filter: blur(18px);
+  animation: floatPulse 7s ease-in-out infinite;
 }
 
-.animate-text-color {
-  animation: textColorChange 20s infinite; /* 4s cycle, infinite repeat */
+@keyframes floatPulse {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.85;
+  }
 }
 </style>
