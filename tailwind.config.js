@@ -75,15 +75,28 @@ export default {
         'sm-btn': '0.6rem' // This is equivalent to Tailwind's 'xs'
       },
       colors: {
-        main: '#fffff', // Main theme color (calm blue)
-        primary: '#eaa255', // Accent (modern soft purple)
-        background: '#0F172A', // Dark navy background
-        text: '#E5E7EB', // Clean readable text
-        'text-muted': '#9CA3AF', // Less prominent text
-        button: '#1E293B', // Darker background for buttons
-        'button-hover': '#334155', // Lighter hover
-        disabled: '#4B5563',
-        danger: '#F87171' // Alert or error
+        main: '#fb923c',
+        primary: '#f97316',
+        'primary-strong': '#ea580c',
+        accent: '#fdba74',
+        background: '#0f172a',
+        surface: 'rgba(15, 23, 42, 0.65)',
+        'surface-strong': 'rgba(10, 12, 24, 0.82)',
+        softwhite: '#f8fafc',
+        text: '#e5e7eb',
+        'text-muted': '#9ca3af',
+        divider: 'rgba(255, 255, 255, 0.08)',
+        button: '#1f2937',
+        'button-hover': '#334155',
+        disabled: '#4b5563',
+        danger: '#f87171'
+      },
+      boxShadow: {
+        glow: '0 20px 40px -15px rgba(249, 115, 22, 0.45)',
+        'glow-warm': '0 18px 35px -12px rgba(234, 88, 12, 0.5)'
+      },
+      backdropBlur: {
+        brand: '20px'
       }
     }
   },
