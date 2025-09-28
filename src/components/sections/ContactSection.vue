@@ -1,95 +1,163 @@
 <template>
   <section
     id="contact"
-    class="max-w-[1440px] mx-auto px-6 md:px-24 lg:px-24 pt-20 pb-10 md:pb-10 lg:pb-20"
+    class="relative mx-auto max-w-[1440px] px-6 pt-20 pb-16 md:px-16 lg:px-24"
   >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start">
-      <!-- Left side -->
-      <div class="w-full leading-relaxed">
-        <h2
-          class="font-bold text-3xl md:text-4xl text-center md:text-left mb-8 md:mb-8 lg:mb-14 text-main"
-        >
-          Let’s Work Together
-        </h2>
-        <p
-          class="text-base md:text-xl mb-4 md:mb-8 lg:mb-10 pr-0 md:pr-8 lg:pr-10 font-medium leading-normal"
-        >
-          Have a project in mind or just want to say hi? Drop a message below and I’ll get
-          back to you as soon as I can.
-        </p>
-      </div>
+    <div class="relative overflow-hidden rounded-[36px] border border-divider bg-surface-strong px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
+      <span class="pointer-events-none absolute inset-x-10 top-0 h-40 rounded-b-full bg-gradient-to-b from-main/25 via-transparent to-transparent blur-3xl"></span>
+      <span class="pointer-events-none absolute -left-16 bottom-0 hidden h-64 w-64 rounded-full bg-gradient-to-tr from-accent/25 via-main/25 to-primary/30 blur-3xl opacity-80 lg:block"></span>
 
-      <!-- Form -->
-      <div class="rounded-lg">
-        <form @submit.prevent="sendEmail"  class="space-y-5">
-          <!-- Email -->
-          <div
-            class="flex items-center border border-dashed border-gray-400 py-2 rounded-md"
-          >
-            <input
-              class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
-              v-model="email"
-              type="email"
-              id="email"
-              placeholder="your@email.com"
-              aria-label="Email Address"
-              required
-            />
+      <div class="relative z-10 grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+        <div class="flex flex-col gap-8">
+          <div class="max-w-lg space-y-5">
+            <div class="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs uppercase tracking-[0.35em] text-softwhite/60">
+              <span class="h-2 w-2 rounded-full bg-main"></span>
+              Let’s connect
+            </div>
+            <h2 class="text-3xl font-semibold text-softwhite md:text-4xl lg:text-[2.8rem]">
+              Let’s shape something memorable together
+            </h2>
+            <p class="text-sm text-softwhite/70 md:text-base">
+              Share a challenge, product idea, or feature concept. I respond within 24 hours with a
+              thoughtful follow-up and next steps. Projects of all sizes welcome—from rapid landing
+              pages to design systems.
+            </p>
           </div>
 
-          <!-- Subject -->
-          <div
-            class="flex items-center border border-dashed border-gray-400 py-2 rounded-md"
-          >
-            <input
-              class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
-              v-model="subject"
-              type="text"
-              id="subject"
-              required
-              placeholder="Subject"
-            />
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div
+              v-for="detail in contactDetails"
+              :key="detail.label"
+              class="rounded-2xl border border-divider bg-surface p-5 backdrop-blur-brand transition duration-300 hover:-translate-y-1 hover:shadow-glow"
+            >
+              <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-main/20 text-main">
+                  <Icon :icon="detail.icon" class="h-5 w-5" />
+                </span>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.25em] text-softwhite/40">{{ detail.label }}</p>
+                  <a
+                    v-if="detail.href"
+                    :href="detail.href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm font-medium text-softwhite hover:text-main"
+                  >
+                    {{ detail.value }}
+                  </a>
+                  <p v-else class="text-sm font-medium text-softwhite">{{ detail.value }}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Message -->
-          <div class="flex border border-dashed border-gray-400 py-2 rounded-md">
-            <textarea
-              placeholder="Your message..."
-              rows="6"
-              class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
-              v-model="message"
-              id="message"
-              required
-            ></textarea>
+          <div class="rounded-2xl border border-divider bg-background/60 p-6 text-sm text-softwhite/70">
+            <p class="font-semibold text-softwhite">Current response time</p>
+            <p class="mt-1 text-softwhite/60">Within 24h on weekdays • Within 48h on weekends</p>
           </div>
+        </div>
 
-          <!-- Submit Button -->
-          <div class="text-center flex justify-end items-end">
+        <div class="relative overflow-hidden rounded-[28px] border border-divider bg-background/70 p-6 shadow-2xl backdrop-blur-brand md:p-8">
+          <span class="pointer-events-none absolute inset-0 bg-gradient-to-br from-main/5 via-transparent to-primary/10 opacity-0 transition duration-500"></span>
+          <form @submit.prevent="sendEmail" class="relative space-y-6">
+            <div class="space-y-2">
+              <label for="email" class="text-xs uppercase tracking-[0.25em] text-softwhite/40">Email</label>
+              <div class="relative flex items-center gap-3 rounded-xl border border-divider bg-surface px-4">
+                <Icon icon="solar:letter-linear" class="h-4 w-4 text-softwhite/40" />
+                <input
+                  v-model="email"
+                  type="email"
+                  id="email"
+                  placeholder="you@awesome.dev"
+                  class="w-full bg-transparent py-3 text-sm text-softwhite placeholder:text-softwhite/30 focus:outline-none"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="subject" class="text-xs uppercase tracking-[0.25em] text-softwhite/40">Subject</label>
+              <div class="relative flex items-center gap-3 rounded-xl border border-divider bg-surface px-4">
+                <Icon icon="solar:pen-2-linear" class="h-4 w-4 text-softwhite/40" />
+                <input
+                  v-model="subject"
+                  type="text"
+                  id="subject"
+                  placeholder="Project intro or topic"
+                  class="w-full bg-transparent py-3 text-sm text-softwhite placeholder:text-softwhite/30 focus:outline-none"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="message" class="text-xs uppercase tracking-[0.25em] text-softwhite/40">Message</label>
+              <div class="relative rounded-xl border border-divider bg-surface px-4">
+                <textarea
+                  v-model="message"
+                  id="message"
+                  rows="6"
+                  placeholder="Share goals, scope, timelines, or links..."
+                  class="w-full bg-transparent py-3 text-sm text-softwhite placeholder:text-softwhite/30 focus:outline-none"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
             <button
               type="submit"
-              class="text-sm-btn md:text-md-btn lg:text-lg-btn uppercase bg-primary hover:bg-orange-600 flex justify-center items-center rounded-sm py-2 px-5 md:py-3 md:px-7 lg:py-3 transition-all duration-500 transform hover:scale-105 shadow-lg text-white"
+              class="relative inline-flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-main via-accent to-primary px-6 py-3 text-sm font-semibold text-background shadow-glow transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_50px_-20px_rgba(56,189,248,0.55)] active:scale-95"
             >
-              Submit
+              <Icon icon="solar:paper-plane-bold" class="h-5 w-5" />
+              Send message
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
+import { Icon } from '@iconify/vue'
 
-const email = ref("");
-const subject = ref("");
-const message = ref("");
+const email = ref('')
+const subject = ref('')
+const message = ref('')
+
+const contactDetails = [
+  {
+    label: 'Email',
+    value: 'hengsoth68@gmail.com',
+    href: 'mailto:hengsoth68@gmail.com',
+    icon: 'solar:letter-line-duotone'
+  },
+  {
+    label: 'Phone',
+    value: '+855 (0) 96 681 5223',
+    href: 'tel:+855966815223',
+    icon: 'solar:phone-outline'
+  },
+  {
+    label: 'Location',
+    value: 'Phnom Penh, Cambodia',
+    href: null,
+    icon: 'solar:map-point-outline'
+  },
+  {
+    label: 'Telegram',
+    value: '@visothhh',
+    href: 'https://t.me/@visothhh',
+    icon: 'solar:chat-round-line-broken'
+  }
+]
 
 const sendEmail = () => {
-  const to = "hengsoth68@gmail.com";
-  const encodedSubject = encodeURIComponent(subject.value);
-  const encodedMessage = encodeURIComponent(message.value);
-  const mailtoLink = `https://mail.google.com/mail/u/0/?source=mailto&to=${to}&subject=${encodedSubject}&body=${encodedMessage}&fs=1&tf=cm`;
-  window.open(mailtoLink, "_blank");
-};
+  const to = 'hengsoth68@gmail.com'
+  const encodedSubject = encodeURIComponent(subject.value)
+  const encodedMessage = encodeURIComponent(message.value)
+  const mailtoLink = `https://mail.google.com/mail/u/0/?source=mailto&to=${to}&subject=${encodedSubject}&body=${encodedMessage}&fs=1&tf=cm`
+  window.open(mailtoLink, '_blank')
+}
 </script>
