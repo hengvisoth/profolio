@@ -1,81 +1,70 @@
 <template>
-  <section class="mb-10 md:mb-20 lg:mb-32">
+  <section class="relative mb-10 md:mb-20 lg:mb-32">
     <div
       id="skills"
-      class="max-w-[1440px] mx-auto px-6 md:px-24 lg:px-24 large:px-0 pt-10 pb-10 md:pb-10 lg:pb-20"
+      class="relative mx-auto w-full max-w-[1440px] px-6 pt-10 pb-16 md:px-16 lg:px-24 large:px-0"
     >
-      <div class="w-full flex flex-col justify-center">
-        <div data-aos="zoom-in" class="inline-block flex-col items-center mx-auto">
-          <h1 class="text-sm-title md:text-md-title lg:text-lg-title font-bold">
-            My <span class="text-main">Technical Skills</span>
-          </h1>
-          <div class="space-y-1 md:space-y-1 lg:space-y-1.5">
-            <div class="h-[2px] md:h-[3px] lg:h-[4px] rounded-md bg-main w-full" />
+      <div class="relative overflow-hidden rounded-[36px] border border-divider bg-surface-strong px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
+        <span class="pointer-events-none absolute -top-40 right-1/2 h-72 w-72 translate-x-1/2 rounded-full bg-gradient-to-br from-main/35 via-accent/25 to-primary/35 blur-3xl"></span>
+        <span class="pointer-events-none absolute -bottom-48 -right-20 hidden h-80 w-80 rounded-full bg-gradient-to-tr from-accent/25 via-main/25 to-primary/35 blur-3xl opacity-80 lg:block"></span>
+
+        <div class="relative z-10 flex flex-col items-center text-center">
+          <div data-aos="zoom-in" class="inline-flex items-center gap-3 rounded-full bg-surface px-5 py-2 text-xs uppercase tracking-[0.3em] text-softwhite/60">
+            <span class="h-2 w-2 rounded-full bg-main"></span>
+            Toolkit highlights
+          </div>
+          <h2 class="mt-6 text-3xl font-semibold md:mt-8 md:text-4xl lg:text-[2.75rem]">
+            <span class="text-softwhite/80">Full-stack craft powered by</span>
+            <span class="block bg-gradient-to-r from-main via-accent to-primary bg-clip-text text-transparent">modern tooling</span>
+          </h2>
+          <p class="mt-4 max-w-3xl text-sm text-softwhite/70 md:text-base">
+            I combine strong fundamentals with a curated set of frameworks, libraries, and cloud
+            tooling to launch resilient, performant experiences. This stack evolves with each
+            project, but the quality bar stays high: clean architecture, pixel-level detail, and
+            inclusive user journeys.
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3 text-[0.7rem] uppercase tracking-[0.25em] text-softwhite/40">
+            <span v-for="chip in categoryChips" :key="chip" class="rounded-full border border-divider px-4 py-2">
+              {{ chip }}
+            </span>
           </div>
         </div>
 
-        <!-- text -->
-        <div class="mt-8 md:mt-10 lg:mt-12">
-          <h3
-            data-aos="fade-up"
-            class="text-h3-sm md:text-h3-md lg:text-h3-lg font-semibold"
-          >
-            Crafting Solutions Through Code
-          </h3>
-          <p
-            data-aos="fade-up"
-            data-aos-delay="100"
-            class="mt-4 md:mt-6 lg:mt-8 leading-relaxed md:leading-relaxed lg:leading-relaxed"
-          >
-            I’m a dedicated full-stack developer who thrives on turning ideas into
-            high-performance, user-centered applications. From crafting clean, responsive
-            frontend interfaces to designing scalable backend architectures, my skills
-            span the full development cycle. I’m passionate about writing elegant code,
-            optimizing performance, and continuously learning new technologies to solve
-            real-world problems. My mission is to deliver software that’s not just
-            functional, but also meaningful and impactful.
-          </p>
-        </div>
-
-        <!-- Skill Cards Section -->
         <div
           data-aos="zoom-in-up"
-          data-aos-delay="200"
-          class="overflow-hidden mt-8 md:mt-10 lg:mt-12 rounded-xl mx-auto flex flex-wrap justify-center gap-y-4 md:gap-y-7 lg:gap-y-8 gap-x-5 md:gap-x-5 lg:gap-x-7 px-auto md:px-4 lg:px-5 py-4 md:py-6 lg:py-8"
+          data-aos-delay="150"
+          class="relative z-10 mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
         >
           <SkillCard
             v-for="(skill, index) in mySkills"
-            :key="index"
-            data-aos="fade-left"
-            :data-aos-delay="index * 150"
-            data-aos-duration="600"
-            data-aos-easing="ease-in-out"
+            :key="`${skill.name}-${index}`"
+            data-aos="fade-up"
+            :data-aos-delay="(index % 4) * 120"
+            data-aos-duration="500"
             :icon="skill.icon"
             :title="skill.name"
           />
         </div>
       </div>
     </div>
-    <div class="mt-auto mx-auto w-full flex items-center justify-center">
-      <div class="bg-primary h-[1px] rounded-md w-[60%] md:w-[40%] lg:w-[40%]"></div>
+    <div class="mt-12 flex w-full items-center justify-center">
+      <div class="h-[2px] w-[55%] max-w-md rounded-full bg-divider"></div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import SkillCard from "../SkillCard.vue";
-import { ref } from "vue";
-import type { skillType } from "../../types/skill.dto";
-import { skillData } from "../../data/skill";
-import { onMounted } from "vue";
+import SkillCard from '../SkillCard.vue'
+import { ref } from 'vue'
+import type { skillType } from '../../types/skill.dto'
+import { skillData } from '../../data/skill'
 
-const mySkills = ref<skillType[]>([]);
-
-const setDataForLoad = () => {
-  mySkills.value = skillData;
-};
-
-onMounted(() => {
-  setDataForLoad();
-});
+const mySkills = ref<skillType[]>(skillData)
+const categoryChips = [
+  'Languages',
+  'Frontend Frameworks',
+  'Cloud & DevOps',
+  'Design Systems'
+]
 </script>
