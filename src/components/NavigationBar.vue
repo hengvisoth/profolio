@@ -3,13 +3,19 @@
     <nav
       class="glass-panel ios-nav"
       :style="{ '--visible-count': visibleCount }"
+      :data-expanded="isExpanded || isCompact"
       @mouseenter="setExpanded(true)"
       @mouseleave="setExpanded(false)"
       @focusin="setExpanded(true)"
       @focusout="handleFocusOut"
     >
       <ul class="ios-nav__list">
-        <li v-for="item in displayedItems" :key="item.id" class="ios-nav__item">
+        <li
+          v-for="(item, index) in displayedItems"
+          :key="item.id"
+          class="ios-nav__item"
+          :style="{ '--item-index': index }"
+        >
           <button
             type="button"
             @click="scrollToSection(item.id)"
@@ -30,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed, nextTick } from 'vue'
 import { gsap } from 'gsap'
 import { Icon } from '@iconify/vue'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -49,14 +55,27 @@ const navItems = [
 ]
 
 const MAX_COLLAPSED_ITEMS = 3
-const isExpanded = ref(false)
+const isExpanded = ref(true)
 const isCompact = ref(false)
 
-const displayedItems = computed(() =>
-  isExpanded.value || navItems.length <= MAX_COLLAPSED_ITEMS
-    ? navItems
-    : navItems.slice(0, MAX_COLLAPSED_ITEMS)
-)
+const displayedItems = computed(() => {
+  if (isExpanded.value || isCompact.value || navItems.length <= MAX_COLLAPSED_ITEMS) {
+    return navItems
+  }
+
+  const activeIndex = navItems.findIndex((item) => item.id === activeSection.value)
+  if (activeIndex === -1) {
+    return navItems.slice(0, MAX_COLLAPSED_ITEMS)
+  }
+
+  if (activeIndex < MAX_COLLAPSED_ITEMS) {
+    return navItems.slice(0, MAX_COLLAPSED_ITEMS)
+  }
+
+  const collapsed = navItems.slice(0, MAX_COLLAPSED_ITEMS - 1)
+  collapsed.push(navItems[activeIndex])
+  return collapsed
+})
 
 const visibleCount = computed(() => displayedItems.value.length)
 
@@ -65,7 +84,9 @@ const setExpanded = (value: boolean) => {
     isExpanded.value = true
     return
   }
-  isExpanded.value = value
+  if (value) {
+    isExpanded.value = true
+  }
 }
 
 const handleFocusOut = (event: FocusEvent) => {
@@ -80,11 +101,13 @@ const handleFocusOut = (event: FocusEvent) => {
 
 const applyCompactState = (matches: boolean) => {
   isCompact.value = matches
-  isExpanded.value = matches
+  isExpanded.value = true
 }
 
 const handleMediaChange = (event: MediaQueryListEvent) => {
   applyCompactState(event.matches)
+  captureSections()
+  updateActiveSection()
 }
 
 // Scroll to the section when the button is clicked
@@ -107,27 +130,60 @@ const scrollToSection = (sectionId: string) => {
   }
 }
 
-// IntersectionObserver to track which section is in view
-const observerOptions = {
-  rootMargin: '-50% 0px'
-}
-
-const observerCallback = (entries: IntersectionObserverEntry[]) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      activeSection.value = `#${entry.target.id}` // Update active section when it's in view
-    }
-  })
-}
-
-let observer: IntersectionObserver | null = null
 let mediaQuery: MediaQueryList | null = null
+let sectionNodes: HTMLElement[] = []
+let scrollFrame = 0
 
-onMounted(() => {
-  observer = new IntersectionObserver(observerCallback, observerOptions)
+const captureSections = () => {
+  sectionNodes = navItems
+    .map((item) => document.querySelector(item.id) as HTMLElement | null)
+    .filter((el): el is HTMLElement => Boolean(el))
+}
 
-  const sections = document.querySelectorAll('section')
-  sections.forEach((section) => observer?.observe(section)) // Observe each section
+const updateActiveSection = () => {
+  scrollFrame = 0
+  if (!sectionNodes.length) return
+
+  const viewportTrigger = window.innerHeight * 0.3
+  let nextActive = sectionNodes[0].id
+
+  for (const section of sectionNodes) {
+    const rect = section.getBoundingClientRect()
+    if (rect.top <= viewportTrigger) {
+      nextActive = section.id
+    } else {
+      break
+    }
+  }
+
+  // Snap to last section when reaching the bottom
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+    nextActive = sectionNodes[sectionNodes.length - 1].id
+  }
+
+  const hashed = `#${nextActive}`
+  if (activeSection.value !== hashed) {
+    activeSection.value = hashed
+  }
+}
+
+const handleScroll = () => {
+  if (scrollFrame) return
+  scrollFrame = window.requestAnimationFrame(updateActiveSection)
+}
+
+const handleResize = () => {
+  captureSections()
+  updateActiveSection()
+}
+
+onMounted(async () => {
+  await nextTick()
+  captureSections()
+  updateActiveSection()
+
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  window.addEventListener('resize', handleResize)
 
   if (typeof window !== 'undefined' && 'matchMedia' in window) {
     mediaQuery = window.matchMedia('(max-width: 640px)')
@@ -137,7 +193,11 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  observer?.disconnect()
+  if (scrollFrame) {
+    window.cancelAnimationFrame(scrollFrame)
+  }
+  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleResize)
   mediaQuery?.removeEventListener('change', handleMediaChange)
 })
 </script>
@@ -147,7 +207,7 @@ onBeforeUnmount(() => {
   position: fixed;
   top: 50%;
   right: clamp(1rem, 3vw, 2rem);
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(0.98);
   z-index: 50;
   --nav-item-height: 52px;
   --nav-item-gap: 12px;
@@ -164,9 +224,16 @@ onBeforeUnmount(() => {
       var(--nav-item-gap) + var(--nav-padding-y) + 5
   );
   transition:
+    transform 0.45s cubic-bezier(0.19, 1, 0.22, 1),
     max-height 0.35s ease,
     padding 0.25s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.45s ease;
+  will-change: transform, max-height, box-shadow;
+}
+
+.ios-nav[data-expanded='true'] {
+  transform: translateY(-50%) scale(1);
+  box-shadow: 0 35px 80px -30px rgba(8, 13, 35, 0.95);
 }
 
 .ios-nav__list {
@@ -174,10 +241,22 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: stretch;
   gap: 0.75rem;
+  will-change: transform, opacity;
 }
 
 .ios-nav__item {
   position: relative;
+  opacity: 0.94;
+  transform: translateX(6px);
+  transition:
+    opacity 0.32s ease,
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--item-index, 0) * 45ms);
+}
+
+.ios-nav[data-expanded='true'] .ios-nav__item {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .ios-nav__button {
@@ -190,8 +269,9 @@ onBeforeUnmount(() => {
   padding: 0.35rem 0.4rem;
   color: rgba(248, 250, 252, 0.65);
   transition:
-    transform 0.25s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     color 0.25s ease;
+  will-change: transform, color;
 }
 
 .ios-nav__button:hover {
@@ -214,8 +294,9 @@ onBeforeUnmount(() => {
   background: rgba(15, 23, 42, 0.5);
   box-shadow: 0 18px 45px -28px rgba(249, 115, 22, 0.55);
   transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
+  will-change: transform, background;
 }
 
 .ios-nav__button--active .ios-nav__icon {
@@ -237,9 +318,10 @@ onBeforeUnmount(() => {
   opacity: 0;
   transform: translateX(12px);
   transition:
-    max-width 0.35s ease,
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    max-width 0.4s ease,
+    opacity 0.32s ease,
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: max-width, opacity, transform;
 }
 
 .ios-nav__button:hover .ios-nav__label,
@@ -262,6 +344,11 @@ onBeforeUnmount(() => {
     --nav-item-height: 48px;
     --nav-item-gap: 10px;
     --nav-padding-y: 2rem;
+  }
+
+  .ios-nav[data-expanded='true'] {
+    transform: translate(-50%, 0);
+    box-shadow: 0 25px 65px -35px rgba(8, 13, 35, 0.85);
   }
 
   .ios-nav__icon {
@@ -290,6 +377,12 @@ onBeforeUnmount(() => {
     padding: 0.3rem 0.4rem;
   }
 
+  .ios-nav__item {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0ms;
+  }
+
   .ios-nav__button:hover {
     transform: translateY(-4px);
   }
@@ -297,6 +390,16 @@ onBeforeUnmount(() => {
   .ios-nav__button--active .ios-nav__icon,
   .ios-nav__button:hover .ios-nav__icon {
     transform: translateY(-2px) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ios-nav,
+  .ios-nav * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 </style>
