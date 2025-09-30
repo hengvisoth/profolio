@@ -2,24 +2,37 @@
   <section class="mb-10 md:mb-20 lg:mb-32">
     <div
       id="experience"
-      class="max-w-[1440px] mx-auto px-6 md:px-24 lg:px-24 lg:px-0 pb-10 md:pb-10 lg:pb-20 pt-10"
+      class="mx-auto w-full max-w-[1440px] px-6 pt-10 pb-12 md:px-16 md:pb-16 lg:px-24 lg:pb-20 large:px-0"
     >
-      <div class="flex flex-col justify-center items-center">
-        <div data-aos="zoom-in" class="inline-block mb-10 md:mb-10 lg:mb-10">
-          <h1 class="text-sm-title md:text-md-title lg:text-lg-title font-bold">
-            My <span class="text-main">Experience</span>
-          </h1>
-          <div class="space-y-1 md:space-y-1 lg:space-y-1.5">
-            <div class="h-[2px] md:h-[3px] lg:h-[4px] rounded-md bg-main w-full" />
+      <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
+        <span
+          class="pointer-events-none absolute -top-28 right-[-10%] h-72 w-72 rounded-full bg-gradient-to-br from-main/20 via-accent/15 to-primary/20 blur-3xl"
+        ></span>
+        <span
+          class="pointer-events-none absolute -bottom-32 left-[-12%] h-80 w-80 rounded-full bg-gradient-to-r from-primary/20 via-transparent to-main/25 blur-3xl"
+        ></span>
+
+        <div class="relative z-10 flex flex-col items-center">
+          <div data-aos="zoom-in" class="flex flex-col items-center text-center">
+            <div class="glass-chip text-xs uppercase tracking-[0.35em] text-softwhite/70">
+              Experience
+            </div>
+            <h1 class="mt-4 text-3xl font-semibold md:text-4xl lg:text-[2.75rem]">
+              My <span class="text-main">Experience</span>
+            </h1>
+            <div class="mt-6 w-24">
+              <div class="glass-divider"></div>
+            </div>
+          </div>
+
+          <div class="mt-12 w-full">
+            <ProjectSlider />
           </div>
         </div>
-        <ProjectSlider />
       </div>
     </div>
-    <div
-      class="mt-auto mx-auto w-full flex items-center justify-center"
-    >
-      <div class="bg-primary h-[1px] rounded-md w-[60%] md:w-[40%] lg:w-[40%]"></div>
+    <div class="mt-12 flex w-full items-center justify-center">
+      <div class="glass-divider max-w-xl"></div>
     </div>
   </section>
 </template>
