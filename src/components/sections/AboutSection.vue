@@ -2,43 +2,51 @@
   <section class="mb-10 md:mb-20 lg:mb-32">
     <div
       id="about"
-      class="max-w-[1440px] mx-auto px-6 md:px-24 lg:px-24 large:px-0 w-screen pt-10 pb-10 md:pb-10 lg:pb-20"
+      class="mx-auto w-full max-w-[1440px] px-6 pt-10 pb-10 md:px-16 md:pb-16 lg:px-24 lg:pb-20 large:px-0"
     >
-      <!-- Header -->
-      <div
-        class="flex justify-center col-span-full md:col-span-3 lg:col-span-2 inline-block mx-auto mb-10 md:mb-10 lg:mb-10"
-      >
-        <div>
-          <h1 class="text-sm-title md:text-md-title lg:text-lg-title font-bold">
-            Who <span class="font-semibold text-main">I Am</span>
+      <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
+        <span
+          class="pointer-events-none absolute -right-24 top-[-35%] h-72 w-72 rounded-full bg-gradient-to-br from-main/20 via-accent/15 to-primary/20 blur-3xl"
+        ></span>
+        <span
+          class="pointer-events-none absolute -bottom-24 left-[-20%] h-80 w-80 rounded-full bg-gradient-to-r from-primary/20 via-transparent to-main/25 blur-3xl"
+        ></span>
+
+        <!-- Header -->
+        <div
+          class="relative z-10 col-span-full mb-12 inline-flex w-full flex-col items-center text-center"
+        >
+          <div class="glass-chip text-xs uppercase tracking-[0.3em] text-softwhite/80">About</div>
+          <h1 class="mt-4 text-3xl font-semibold md:text-4xl lg:text-[2.75rem]">
+            Who <span class="text-main">I Am</span>
           </h1>
-          <div class="space-y-1 md:space-y-1 lg:space-y-1.5">
-            <div class="h-[2px] md:h-[3px] lg:h-[3px] rounded-md bg-main w-full" />
+          <div class="mt-6 w-32">
+            <div class="glass-divider"></div>
           </div>
         </div>
-      </div>
 
-      <!-- Content -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12">
-        <!-- Image -->
+        <!-- Content -->
         <div
-          class="col-span-full md:col-span-1 lg:col-span-1 row-span-full lg:row-span-7 flex justify-center mt-6"
+          class="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-[0.9fr_1.1fr] lg:grid-cols-[0.85fr_1.15fr]"
         >
-          <img
-            src="../../../public/pf.jpeg"
-            alt="About Me"
-            class="shadow-lg rounded-full w-[420px] h-[420px] object-cover border-2 border-dashed border-primary"
-          />
-        </div>
+          <!-- Image -->
+          <div class="flex justify-center">
+            <div class="glass-panel flex h-full max-w-[400px] items-center justify-center overflow-hidden rounded-[32px] p-6">
+              <img
+                src="../../../public/pf.jpeg"
+                alt="About Me"
+                class="h-[260px] w-[260px] rounded-full border border-white/10 object-cover shadow-[0_25px_60px_-40px_rgba(249,115,22,0.45)] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px]"
+              />
+            </div>
+          </div>
 
-        <!-- Paragraph -->
-        <div class="col-span-full md:col-span-2 lg:col-span-2">
-          <div>
-            <h6 class="text-h3-sm md:text-h3-md lg:text-h3-lg font-semibold text-primary">
-              Passionate About Front-End Craft
-            </h6>
-            <div class="whitespace-normal mt-2 text-wrap w-full text-left">
-              <p class="leading-relaxed md:leading-relaxed lg:leading-relaxed">
+          <div class="flex flex-col gap-8 lg:gap-10">
+            <!-- Paragraph -->
+            <div class="glass-card p-6 md:p-8">
+              <h6 class="text-h3-sm font-semibold text-primary md:text-h3-md lg:text-h3-lg">
+                Passionate About Front-End Craft
+              </h6>
+              <p class="mt-3 leading-relaxed text-softwhite/80">
                 I am deeply enthusiastic about crafting engaging, dynamic, and responsive web
                 interfaces. I enjoy translating design concepts into functional front-end
                 applications that elevate user experience. My passion lies in blending creativity
@@ -48,86 +56,27 @@
                 meaningful, intuitive digital experiences.
               </p>
             </div>
-          </div>
-        </div>
 
-        <!-- Details -->
-        <div
-          class="col-span-full md:col-span-2 lg:col-span-2 md:row-start-1 lg:row-start-auto pl-0 md:pl-10 lg:pl-0"
-        >
-          <div
-            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 flex-col text-xs md:text-base lg:text-lg gap-4 md:gap-6 lg:gap-8"
-          >
-            <div
-              class="flex items-center gap-3 p-3 rounded-lg shadow-md border-[1px] border-primary"
-            >
-              <Icon icon="hugeicons:student" class="text-main w-7 h-7" />
-              <p class="  ">
-                <span class="font-medium">Degree:</span>
-                <span class="ml-2">Software Engineering</span>
-              </p>
-            </div>
-
-            <div
-              class="flex items-center gap-3 p-3 rounded-lg shadow-md border-[1px] border-primary"
-            >
-              <Icon icon="mdi:location" class="text-main w-7 h-7" />
-              <p class="  ">
-                <span class="font-semibold">Location:</span>
-                <span class="ml-2">Phnom Penh, Cambodia</span>
-              </p>
-            </div>
-
-            <div
-              class="flex items-center gap-3 p-3 rounded-lg shadow-md border-[1px] border-primary"
-            >
-              <Icon icon="ic:outline-email" class="text-main w-7 h-7" />
-              <p class="  ">
-                <span class="font-semibold">Email:</span>
-                <span class="ml-2">
-                  <a href="mailto:hengsoth68@gmail.com" class="hover:underline">
-                    hengsoth68@gmail.com
-                  </a>
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="flex items-center gap-3 p-3 rounded-lg shadow-md border-[1px] border-primary"
-            >
-              <Icon icon="majesticons:phone-dial-line" class="text-main w-7 h-7" />
-              <p class="  ">
-                <span class="font-semibold">Phone:</span>
-                <span>
-                  <a href="tel:+855966815223" class="hover:underline"> +855 (0) 96 681 5223 </a>
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="flex items-center gap-3 p-3 rounded-lg shadow-md border-[1px] border-primary"
-            >
-              <Icon icon="mdi:spoken-language" class="text-main w-7 h-7" />
-              <p class="  ">
-                <span class="font-semibold">Languages:</span>
-                <span class="ml-2">Khmer, English</span>
-              </p>
-            </div>
-
-            <div
-              class="flex items-center gap-3 p-3 rounded-lg shadow-md border-[1px] border-primary"
-            >
-              <Icon icon="basil:telegram-solid" class="text-main w-7 h-7" />
-              <p class="  ">
-                <span class="font-semibold">Telegram:</span>
-                <a
-                  href="https://t.me/@visothhh"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ml-2"
-                  >@visothhh</a
-                >
-              </p>
+            <!-- Details -->
+            <div class="grid gap-4 md:grid-cols-2">
+              <div
+                v-for="detail in aboutDetails"
+                :key="detail.label"
+                class="glass-card flex items-center gap-3 p-4 transition-transform duration-300 hover:-translate-y-1"
+              >
+                <Icon :icon="detail.icon" class="h-7 w-7 text-main" />
+                <p class="text-sm md:text-base">
+                  <span class="font-medium text-softwhite/80">{{ detail.label }}:</span>
+                  <span class="ml-2 text-softwhite">
+                    <template v-if="detail.href">
+                      <a :href="detail.href" class="hover:underline" target="_blank" rel="noopener">
+                        {{ detail.value }}
+                      </a>
+                    </template>
+                    <template v-else>{{ detail.value }}</template>
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -135,12 +84,36 @@
     </div>
 
     <!-- Footer Separator -->
-    <div class="mt-auto mx-auto w-full flex items-center justify-center">
-      <div class="bg-primary h-[1px] rounded-md w-[60%] md:w-[40%] lg:w-[40%]"></div>
+    <div class="mt-12 flex w-full items-center justify-center">
+      <div class="glass-divider max-w-xl"></div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+
+const aboutDetails = [
+  { label: 'Degree', value: 'Software Engineering', icon: 'hugeicons:student' },
+  { label: 'Location', value: 'Phnom Penh, Cambodia', icon: 'mdi:location' },
+  {
+    label: 'Email',
+    value: 'hengsoth68@gmail.com',
+    href: 'mailto:hengsoth68@gmail.com',
+    icon: 'ic:outline-email'
+  },
+  {
+    label: 'Phone',
+    value: '+855 (0) 96 681 5223',
+    href: 'tel:+855966815223',
+    icon: 'majesticons:phone-dial-line'
+  },
+  { label: 'Languages', value: 'Khmer, English', icon: 'mdi:spoken-language' },
+  {
+    label: 'Telegram',
+    value: '@visothhh',
+    href: 'https://t.me/@visothhh',
+    icon: 'basil:telegram-solid'
+  }
+]
 </script>
