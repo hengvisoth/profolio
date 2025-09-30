@@ -1,5 +1,5 @@
 <template >
-  <div class="overflow-hidden flex flex-col h-full w-full items-center justify-center mx-auto">
+  <div class="mx-auto flex h-full w-full flex-col items-center overflow-hidden">
     <LandingPage />
     <AboutSection />
     <SkillSection />
