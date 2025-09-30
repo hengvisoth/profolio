@@ -19,130 +19,132 @@
         <div class="relative grid items-center gap-12 lg:grid-cols-[minmax(0,420px)_1fr]">
           <div data-aos="zoom-in" class="order-2 lg:order-1 flex w-full flex-col space-y-8">
             <div
-            class="glass-chip inline-flex items-center gap-2 self-start text-xs uppercase tracking-[0.2em] text-softwhite/80"
-          >
-            <span class="h-2 w-2 rounded-full bg-main shadow-[0_0_12px_rgba(234,88,12,0.8)]"></span>
-            Available for opportunities
-          </div>
-
-          <div class="space-y-4 md:space-y-6">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-              Hey, I’m
-              <span
-                class="bg-gradient-to-r from-main via-accent to-primary bg-clip-text text-transparent"
-              >
-                Visoth
-              </span>
-            </h1>
-
-            <div
-              class="glass-card flex flex-wrap items-center gap-3 px-5 py-4 text-xl md:text-2xl lg:text-3xl font-medium text-softwhite/90"
+              class="glass-chip inline-flex items-center gap-2 self-start text-xs uppercase tracking-[0.2em] text-softwhite/80"
             >
-              <span class="text-softwhite/70">Crafting delightful web experiences as a</span>
-              <vue-writer
-                class="bg-clip-text text-transparent bg-gradient-to-r from-main via-softwhite to-accent"
-                :array="['Front-End Developer|', 'UI Engineer|', 'Design System Lover|']"
-                :eraseSpeed="40"
-                :typeSpeed="90"
-                :delay="1200"
-              />
+              <span
+                class="h-2 w-2 rounded-full bg-main shadow-[0_0_12px_rgba(234,88,12,0.8)]"
+              ></span>
+              Available for opportunities
             </div>
 
-            <p class="max-w-xl text-base md:text-lg text-softwhite/80 leading-relaxed">
-              I craft responsive, accessible interfaces with modern Vue ecosystems. My work blends
-              thoughtful interaction design with performance-focused engineering, resulting in
-              experiences that feel polished, immersive, and fast on every device.
-            </p>
-          </div>
-
-          <div class="flex flex-wrap items-center gap-5">
-            <button
-              @click="handleContact"
-              data-aos="fade-up"
-              data-aos-delay="150"
-              class="relative inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm md:text-base font-semibold text-background shadow-glow-warm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-18px_rgba(234,88,12,0.65)] active:scale-95"
-            >
-              <Icon icon="solar:mailbox-bold" class="h-5 w-5" />
-              Let’s collaborate
-            </button>
-
-            <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
-              <span
-                data-aos="fade-up"
-                data-aos-delay="220"
-                class="relative inline-flex items-center gap-2 overflow-hidden rounded-full px-[1px] py-[1px]"
-              >
+            <div class="space-y-4 md:space-y-6">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+                Hey, I’m
                 <span
-                  class="absolute inset-0 bg-gradient-to-r from-main via-accent to-primary opacity-80 transition-opacity duration-300 group-hover:opacity-100"
-                ></span>
-                <span
-                  class="relative inline-flex items-center gap-2 rounded-full bg-surface px-6 py-3 text-sm md:text-base font-semibold text-softwhite backdrop-blur-brand ring-1 ring-divider transition-all duration-300 group-hover:-translate-y-1 group-hover:text-softwhite/90"
+                  class="bg-gradient-to-r from-main via-accent to-primary bg-clip-text text-transparent"
                 >
-                  <Icon icon="solar:download-square-broken" class="h-5 w-5" />
-                  Download CV
+                  Visoth
                 </span>
-              </span>
-            </a>
-          </div>
+              </h1>
 
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <p class="pr-2 text-sm uppercase tracking-[0.3em] text-softwhite/40">Find me on</p>
-            <template v-for="(item, index) in socialLinks" :key="index">
-              <a
-                :href="item.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider bg-surface text-softwhite/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-main/70 hover:text-main hover:shadow-glow"
-              >
-                <font-awesome-icon
-                  :icon="item.icon"
-                  class="h-4 w-4 transition-transform group-hover:scale-110"
-                />
-              </a>
-            </template>
-          </div>
-
-          <div class="grid w-full gap-4 pt-6 sm:grid-cols-3">
-            <div
-              v-for="stat in heroStats"
-              :key="stat.label"
-              class="glass-card p-4 transition-transform duration-300 hover:-translate-y-1 hover:shadow-glow"
-            >
-              <p class="text-2xl font-semibold text-softwhite">{{ stat.value }}</p>
-              <p class="text-sm text-softwhite/60">{{ stat.label }}</p>
-              <p class="mt-1 text-xs text-softwhite/50">{{ stat.caption }}</p>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="zoom-in-up" class="order-1 lg:order-2 mx-auto flex justify-center">
-          <div class="relative">
-            <span
-              class="absolute -inset-4 hidden md:block rounded-[40%] bg-gradient-to-br from-main/40 via-accent/30 to-primary/50 blur-2xl opacity-90"
-            ></span>
-            <div
-              class="glass-panel relative w-[240px] overflow-hidden rounded-[32px] md:w-[360px] lg:w-[420px]"
-            >
               <div
-                class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"
-              ></div>
-              <img
-                src="../../../public/pf.jpeg"
-                alt="Visoth Profile"
-                class="relative z-10 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
+                class="glass-card flex flex-wrap items-center gap-3 px-5 py-4 text-xl md:text-2xl lg:text-3xl font-medium text-softwhite/90"
+              >
+                <span class="text-softwhite/70">Crafting delightful web experiences as a</span>
+                <vue-writer
+                  class="bg-clip-text text-transparent bg-gradient-to-r from-main via-softwhite to-accent"
+                  :array="['Front-End Developer|', 'UI Engineer|', 'Design System Lover|']"
+                  :eraseSpeed="40"
+                  :typeSpeed="90"
+                  :delay="1200"
+                />
+              </div>
+
+              <p class="max-w-xl text-base md:text-lg text-softwhite/80 leading-relaxed">
+                I craft responsive, accessible interfaces with modern Vue ecosystems. My work blends
+                thoughtful interaction design with performance-focused engineering, resulting in
+                experiences that feel polished, immersive, and fast on every device.
+              </p>
             </div>
 
-            <span
-              v-for="floating in floatingIcons"
-              :key="floating.icon"
-              :class="['floating-icon', floating.position]"
-              :style="{ animationDelay: floating.delay }"
-            >
-              <Icon :icon="floating.icon" class="h-5 w-5 text-main" />
-            </span>
+            <div class="flex flex-wrap items-center gap-5">
+              <button
+                @click="handleContact"
+                data-aos="fade-up"
+                data-aos-delay="150"
+                class="relative inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm md:text-base font-semibold text-background shadow-glow-warm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-18px_rgba(234,88,12,0.65)] active:scale-95"
+              >
+                <Icon icon="solar:mailbox-bold" class="h-5 w-5" />
+                Let’s collaborate
+              </button>
+
+              <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay="220"
+                  class="relative inline-flex items-center gap-2 overflow-hidden rounded-full px-[1px] py-[1px]"
+                >
+                  <span
+                    class="absolute inset-0 bg-gradient-to-r from-main via-accent to-primary opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                  ></span>
+                  <span
+                    class="relative inline-flex items-center gap-2 rounded-full bg-surface px-6 py-3 text-sm md:text-base font-semibold text-softwhite backdrop-blur-brand ring-1 ring-divider transition-all duration-300 group-hover:-translate-y-1 group-hover:text-softwhite/90"
+                  >
+                    <Icon icon="solar:download-square-broken" class="h-5 w-5" />
+                    Download CV
+                  </span>
+                </span>
+              </a>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <p class="pr-2 text-sm uppercase tracking-[0.3em] text-softwhite/40">Find me on</p>
+              <template v-for="(item, index) in socialLinks" :key="index">
+                <a
+                  :href="item.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-divider bg-surface text-softwhite/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-main/70 hover:text-main hover:shadow-glow"
+                >
+                  <font-awesome-icon
+                    :icon="item.icon"
+                    class="h-4 w-4 transition-transform group-hover:scale-110"
+                  />
+                </a>
+              </template>
+            </div>
+          </div>
+
+          <div data-aos="zoom-in-up" class="order-1 lg:order-2 mx-auto flex justify-center">
+            <div class="relative">
+              <span
+                class="absolute -inset-4 hidden md:block rounded-[40%] bg-gradient-to-br from-main/40 via-accent/30 to-primary/50 blur-2xl opacity-90"
+              ></span>
+              <div
+                class="glass-panel relative w-[240px] overflow-hidden rounded-[32px] md:w-[360px] lg:w-[420px]"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"
+                ></div>
+                <img
+                  src="../../../public/pf.jpeg"
+                  alt="Visoth Profile"
+                  class="relative z-10 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+              </div>
+
+              <span
+                v-for="floating in floatingIcons"
+                :key="floating.icon"
+                :class="['floating-icon', floating.position]"
+                :style="{ animationDelay: floating.delay }"
+              >
+                <Icon :icon="floating.icon" class="h-5 w-5 text-main" />
+              </span>
+            </div>
           </div>
         </div>
+
+        <div class="grid w-full gap-4 pt-6 sm:grid-cols-3">
+          <div
+            v-for="stat in heroStats"
+            :key="stat.label"
+            class="glass-card p-4 transition-transform duration-300 hover:-translate-y-1 hover:shadow-glow"
+          >
+            <p class="text-2xl font-semibold text-softwhite">{{ stat.value }}</p>
+            <p class="text-sm text-softwhite/60">{{ stat.label }}</p>
+            <p class="mt-1 text-xs text-softwhite/50">{{ stat.caption }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -169,7 +171,7 @@ const socialLinks = [
 const heroStats = [
   {
     value: '4+',
-    label: 'Years building UI',
+    label: 'Years building apps',
     caption: 'Hands-on with Vue, React, and design systems.'
   },
   {
