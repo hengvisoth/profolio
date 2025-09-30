@@ -1,34 +1,35 @@
 <template>
   <div
-    class="w-full h-full lg:h-[720px] flex-row py-4 md:py-20 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-8 lg:gap-10"
+    class="grid w-full grid-cols-1 gap-8 py-6 md:grid-cols-[1.1fr_1fr] md:py-10 lg:gap-12 lg:py-14"
   >
     <!-- left sides -->
-    <div class="order-last md:order-first lg:order-first flex flex-col justify-between h-full">
+    <div class="glass-card order-last flex h-full flex-col justify-between gap-10 p-6 md:order-first md:p-8">
       <!-- index and role -->
       <div>
         <div>
-          <h1 class="text-main text-6xl md:text-8xl lg:text-9xl font-Angkor font-bold">
+          <h1 class="text-main text-6xl font-Angkor font-bold md:text-7xl lg:text-8xl">
             {{ projectCode }}
           </h1>
-          <h2 class="font-bold text-primary text-sm-h2 md:text-md-h2 lg:text-lg-h2">
+          <h2 class="text-2xl font-semibold text-softwhite md:text-3xl lg:text-4xl">
             {{ title }}
           </h2>
           <div
-            class="flex justify-between flex-col md:flex-row lg:flex-row items-start md:items-center lg:items-center gap-1 md:gap-2 lg:gap-2"
+            class="mt-4 flex flex-col items-start gap-2 md:flex-row md:items-center md:justify-between"
           >
-            <p class="text-main font-normal text-base md:text-lg lg:text-lg">
+            <p class="text-main text-base font-medium md:text-lg">
               {{ roleAs }}
             </p>
             <!-- Date range -->
-            <p class="text-softwhite font-normal text-xs md:text-base lg:text-xs">
-              <span class="font-semibold">From:</span> {{ startDate }}
-              <span class="font-semibold">To:</span> {{ endDate }}
+            <p class="glass-chip text-[0.65rem] font-medium uppercase tracking-[0.35em] text-softwhite/80">
+              <span class="text-softwhite">From</span>: {{ startDate }}
+              <span class="mx-2 text-main">•</span>
+              <span class="text-softwhite">To</span>: {{ endDate }}
             </p>
           </div>
         </div>
-        <div class="my-3 md:my-5 lg:my-">
+        <div class="my-5">
           <p
-            class="whitespace-pre-line leading-relaxed md:leading-relaxed lg:leading-relaxed text-sm md:text-lg lg:text-lg text-softwhite font-normal"
+            class="whitespace-pre-line leading-relaxed text-sm text-softwhite/80 md:text-base"
           >
             {{ short_desc }}
           </p>
@@ -36,70 +37,58 @@
       </div>
 
       <!-- ------------------------- -->
-      <div class="py-10">
+      <div class="glass-card flex flex-col gap-4 p-5">
         <!-- Technologies -->
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-3">
           <!-- Display technologies in the desired format -->
           <span
-            class="flex items-center font-medium text-base cursor-pointer"
+            class="glass-chip group flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em]"
             v-for="(tech, index) in technologies"
             :key="tech.name"
           >
             <img
               :src="tech.icon?.logo"
               :alt="tech.name"
-              class="w-4 md:w-5 lg:w-5 h-4 md:h-5 lg:h-5 inline-block mr-2 transition-transform transform hover:scale-110 object-cover bg-white p-1 rounded"
+              class="mr-2 inline-block h-4 w-4 rounded bg-white p-0.5 transition-transform duration-200 ease-out group-hover:scale-105 md:h-5 md:w-5"
             />
-            <span
-              class="text-xs md:text-sm lg:text-sm text-white hover:text-orange transition-colors"
-              >{{ tech.name }}</span
-            >
-            <span v-if="index < technologies.length - 1" class="mx-2 text-textGray">,</span>
+            <span class="text-softwhite/80">{{ tech.name }}</span>
           </span>
         </div>
 
         <!-- divider -->
-        <div class="flex-grow border-t border-primary my-2 md:my-3 lg:my-4"></div>
+        <div class="glass-divider"></div>
 
         <!-- git and project detail -->
-        <div class="flex flex-row items-center space-x-4">
-          <!-- Button 1 -->
+        <div class="flex flex-row flex-wrap items-center gap-4">
           <button
-            class="flex items-center justify-center p-2 rounded-full transition-transform transform hover:scale-110 active:scale-95 focus:outline-none"
+            class="glass-chip group flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-softwhite/80 transition-transform duration-200 hover:-translate-y-1"
           >
-            <span
-              class="inline-flex items-center justify-center w-10 md:w-12 lg:w-12 h-10 md:h-12 lg:h-12 bg-primary rounded-full transition-colors hover:bg-gray-500 active:bg-gray-600"
-            >
-              <Icon
-                class="text-main w-7 md:w-8 lg:w-8 h-7 md:h-8 lg:h-8 transition-transform hover:scale-105"
-                icon="tdesign:arrow-right-up"
-              />
-            </span>
+            <Icon
+              class="h-5 w-5 text-main transition-transform duration-200 group-hover:scale-110"
+              icon="tdesign:arrow-right-up"
+            />
+            Preview
           </button>
 
-          <!-- Button 2 -->
           <a :href="gitHubUrl" target="_blank" rel="noopener noreferrer">
-            <button
-              class="flex items-center justify-center p-2 rounded-full transition-transform transform hover:scale-110 active:scale-95 focus:outline-none"
+            <span
+              class="glass-chip group flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-softwhite/80 transition-transform duration-200 hover:-translate-y-1"
             >
-              <span
-                class="inline-flex items-center justify-center w-10 md:w-12 lg:w-12 h-10 md:h-12 lg:h-12 bg-primary rounded-full transition-colors hover:bg-gray-500 active:bg-gray-600"
-              >
-                <Icon
-                  class="text-main w-7 md:w-8 lg:w-8 h-7 md:h-8 lg:h-8 transition-transform hover:scale-105"
-                  icon="mdi:github"
-                />
-              </span>
-            </button>
+              <Icon
+                class="h-5 w-5 text-main transition-transform duration-200 group-hover:scale-110"
+                icon="mdi:github"
+              />
+              GitHub
+            </span>
           </a>
         </div>
       </div>
     </div>
 
     <!-- slider -->
-    <div class="h-full rounded-xl flex justify-center items-center">
+    <div class="glass-card flex h-full items-center justify-center overflow-hidden p-4">
       <div id="controls-carousel" class="relative w-full" data-carousel="static">
-        <div class="relative flex items-center justify-center overflow-hidden my-auto">
+        <div class="relative flex items-center justify-center overflow-hidden">
           <Swiper
             class="mySwiper h-full flex justify-center items-center"
             @slideChange="onSlideChange"
@@ -110,7 +99,7 @@
                 v-if="index === activeIndex"
                 :src="project.imageUrl"
                 data-aos="zoom-in"
-                class="rounded-xl max-w-full md:max-w-[500px] lg:max-w-[500px] h-[320px] md:h-[500px] lg:h-[500px] object-contain mx-auto bg-white p-2 shadow"
+                class="glass-panel mx-auto h-[280px] max-w-full rounded-3xl border-0 bg-black/20 object-contain p-4 shadow-2xl md:h-[420px] md:max-w-[480px] lg:h-[460px]"
                 alt="Project Image"
               />
 
@@ -130,44 +119,28 @@
             @click="slidePrev"
             :disabled="isPrevDisabled"
             type="button"
-            class="mt-5 absolute end-14 z-30 flex justify-center bg-primary group focus:outline-none transition-all duration-200 ease-in-out"
-            :class="
-              isPrevDisabled
-                ? 'opacity-30 cursor-not-allowed'
-                : 'hover:bg-opacity-65 cursor-pointer active:scale-95'
-            "
+            class="absolute -left-3 top-1/2 z-30 -translate-y-1/2 rounded-full bg-main/20 p-1.5 text-main backdrop-blur-md transition-all duration-200 ease-in-out hover:-translate-y-1 hover:bg-main/30 md:-left-6"
+            :class="isPrevDisabled ? 'opacity-20 cursor-not-allowed' : 'cursor-pointer'"
           >
-            <span
-              class="inline-flex items-center justify-center w-8 md:w-9 lg:w-10 h-8 md:h-9 lg:h-10 group-hover:bg-opacity-50 group-focus:outline-none"
-            >
-              <Icon
-                icon="ooui:next-rtl"
-                class="text-black w-6 md:w-7 lg:w-8 h-6 md:h-7 lg:h-8 transition-transform duration-200 ease-in-out"
-              />
-              <span class="sr-only">Previous</span>
-            </span>
+            <Icon
+              icon="ooui:next-rtl"
+              class="h-6 w-6 transition-transform duration-200 ease-in-out"
+            />
+            <span class="sr-only">Previous</span>
           </button>
 
           <button
             @click="slideNext"
             :disabled="isNextDisabled"
             type="button"
-            class="mt-5 absolute end-0 z-30 flex items-center justify-center bg-primary group focus:outline-none transition-all duration-200 ease-in-out"
-            :class="
-              isNextDisabled
-                ? 'opacity-25 cursor-not-allowed'
-                : 'hover:bg-opacity-65 cursor-pointer active:scale-95'
-            "
+            class="absolute -right-3 top-1/2 z-30 -translate-y-1/2 rounded-full bg-main/20 p-1.5 text-main backdrop-blur-md transition-all duration-200 ease-in-out hover:-translate-y-1 hover:bg-main/30 md:-right-6"
+            :class="isNextDisabled ? 'opacity-20 cursor-not-allowed' : 'cursor-pointer'"
           >
-            <span
-              class="inline-flex items-center justify-center w-8 md:w-9 lg:w-10 h-8 md:h-9 lg:h-10 group-hover:bg-opacity-50 group-focus:outline-none"
-            >
-              <Icon
-                icon="ooui:next-ltr"
-                class="text-black w-6 md:w-7 lg:w-8 h-6 md:h-7 lg:h-8 transition-transform duration-200 ease-in-out"
-              />
-              <span class="sr-only">Next</span>
-            </span>
+            <Icon
+              icon="ooui:next-ltr"
+              class="h-6 w-6 transition-transform duration-200 ease-in-out"
+            />
+            <span class="sr-only">Next</span>
           </button>
         </div>
       </div>
