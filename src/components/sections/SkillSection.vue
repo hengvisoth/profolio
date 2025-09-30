@@ -4,12 +4,12 @@
       id="skills"
       class="relative mx-auto w-full max-w-[1440px] px-6 pt-10 pb-16 md:px-16 lg:px-24 large:px-0"
     >
-      <div class="relative overflow-hidden rounded-[36px] border border-divider bg-surface-strong px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
-        <span class="pointer-events-none absolute -top-40 right-1/2 h-72 w-72 translate-x-1/2 rounded-full bg-gradient-to-br from-main/35 via-accent/25 to-primary/35 blur-3xl"></span>
-        <span class="pointer-events-none absolute -bottom-48 -right-20 hidden h-80 w-80 rounded-full bg-gradient-to-tr from-accent/25 via-main/25 to-primary/35 blur-3xl opacity-80 lg:block"></span>
+      <div class="glass-panel relative overflow-hidden px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
+        <span class="pointer-events-none absolute -top-40 right-1/2 h-72 w-72 translate-x-1/2 rounded-full bg-gradient-to-br from-main/25 via-accent/20 to-primary/30 blur-3xl"></span>
+        <span class="pointer-events-none absolute -bottom-48 -right-20 hidden h-80 w-80 rounded-full bg-gradient-to-tr from-accent/20 via-main/20 to-primary/30 blur-3xl opacity-80 lg:block"></span>
 
         <div class="relative z-10 flex flex-col items-center text-center">
-          <div data-aos="zoom-in" class="inline-flex items-center gap-3 rounded-full bg-surface px-5 py-2 text-xs uppercase tracking-[0.3em] text-softwhite/60">
+          <div data-aos="zoom-in" class="glass-chip text-xs uppercase tracking-[0.3em] text-softwhite/70">
             <span class="h-2 w-2 rounded-full bg-main"></span>
             Toolkit highlights
           </div>
@@ -24,8 +24,8 @@
             inclusive user journeys.
           </p>
 
-          <div class="mt-8 flex flex-wrap justify-center gap-3 text-[0.7rem] uppercase tracking-[0.25em] text-softwhite/40">
-            <span v-for="chip in categoryChips" :key="chip" class="rounded-full border border-divider px-4 py-2">
+          <div class="mt-8 flex flex-wrap justify-center gap-3 text-[0.7rem] uppercase tracking-[0.25em] text-softwhite/50">
+            <span v-for="chip in categoryChips" :key="chip" class="glass-chip text-[0.65rem]">
               {{ chip }}
             </span>
           </div>
