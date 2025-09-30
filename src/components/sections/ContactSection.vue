@@ -3,14 +3,14 @@
     id="contact"
     class="relative mx-auto max-w-[1440px] px-6 pt-20 pb-16 md:px-16 lg:px-24"
   >
-    <div class="relative overflow-hidden rounded-[36px] border border-divider bg-surface-strong px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
+    <div class="glass-panel relative overflow-hidden px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
       <span class="pointer-events-none absolute inset-x-10 top-0 h-40 rounded-b-full bg-gradient-to-b from-main/25 via-transparent to-transparent blur-3xl"></span>
       <span class="pointer-events-none absolute -left-16 bottom-0 hidden h-64 w-64 rounded-full bg-gradient-to-tr from-accent/25 via-main/25 to-primary/30 blur-3xl opacity-80 lg:block"></span>
 
       <div class="relative z-10 grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
         <div class="flex flex-col gap-8">
           <div class="max-w-lg space-y-5">
-            <div class="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs uppercase tracking-[0.35em] text-softwhite/60">
+            <div class="glass-chip text-xs uppercase tracking-[0.35em] text-softwhite/70">
               <span class="h-2 w-2 rounded-full bg-main"></span>
               Let’s connect
             </div>
@@ -28,7 +28,7 @@
             <div
               v-for="detail in contactDetails"
               :key="detail.label"
-              class="rounded-2xl border border-divider bg-surface p-5 backdrop-blur-brand transition duration-300 hover:-translate-y-1 hover:shadow-glow"
+              class="glass-card p-5 transition duration-300 hover:-translate-y-1 hover:shadow-glow"
             >
               <div class="flex items-center gap-3">
                 <span class="flex h-10 w-10 items-center justify-center rounded-full bg-main/20 text-main">
@@ -51,13 +51,13 @@
             </div>
           </div>
 
-          <div class="rounded-2xl border border-divider bg-background/60 p-6 text-sm text-softwhite/70">
+          <div class="glass-card bg-background/60 p-6 text-sm text-softwhite/70">
             <p class="font-semibold text-softwhite">Current response time</p>
             <p class="mt-1 text-softwhite/60">Within 24h on weekdays • Within 48h on weekends</p>
           </div>
         </div>
 
-        <div class="relative overflow-hidden rounded-[28px] border border-divider bg-background/70 p-6 shadow-2xl backdrop-blur-brand md:p-8">
+        <div class="glass-panel relative overflow-hidden rounded-[28px] bg-background/70 p-6 shadow-2xl md:p-8">
           <span class="pointer-events-none absolute inset-0 bg-gradient-to-br from-main/5 via-transparent to-primary/10 opacity-0 transition duration-500"></span>
           <form @submit.prevent="sendEmail" class="relative space-y-6">
             <div class="space-y-2">
