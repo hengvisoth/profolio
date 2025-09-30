@@ -6,12 +6,20 @@
       ></div>
     </div>
     <div
-      class="relative z-10 max-w-[1440px] mx-auto w-full px-6 md:px-16 lg:px-24 large:px-0 pt-[80px] md:pt-[96px] lg:pt-[120px] pb-14 md:pb-24 lg:pb-28"
+      class="relative z-10 mx-auto w-full max-w-[1440px] px-6 pt-[80px] pb-14 md:px-16 md:pt-[96px] md:pb-24 lg:px-24 lg:pt-[120px] lg:pb-28 large:px-0"
     >
-      <div class="relative grid items-center gap-12 lg:grid-cols-[minmax(0,420px)_1fr]">
-        <div data-aos="zoom-in" class="order-2 lg:order-1 flex w-full flex-col space-y-8">
-          <div
-            class="inline-flex items-center gap-2 self-start rounded-full bg-surface-strong px-4 py-1.5 text-xs uppercase tracking-[0.2em] ring-1 ring-divider backdrop-blur-brand"
+      <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
+        <span
+          class="pointer-events-none absolute -left-32 top-[-45%] h-80 w-80 rounded-full bg-gradient-to-r from-main/15 via-accent/10 to-primary/20 blur-3xl"
+        ></span>
+        <span
+          class="pointer-events-none absolute -bottom-28 right-0 h-72 w-72 rounded-full bg-gradient-to-tr from-main/20 via-transparent to-primary/25 blur-3xl"
+        ></span>
+
+        <div class="relative grid items-center gap-12 lg:grid-cols-[minmax(0,420px)_1fr]">
+          <div data-aos="zoom-in" class="order-2 lg:order-1 flex w-full flex-col space-y-8">
+            <div
+            class="glass-chip inline-flex items-center gap-2 self-start text-xs uppercase tracking-[0.2em] text-softwhite/80"
           >
             <span class="h-2 w-2 rounded-full bg-main shadow-[0_0_12px_rgba(234,88,12,0.8)]"></span>
             Available for opportunities
@@ -28,7 +36,7 @@
             </h1>
 
             <div
-              class="flex flex-wrap items-center gap-3 text-xl md:text-2xl lg:text-3xl font-medium text-softwhite/90"
+              class="glass-card flex flex-wrap items-center gap-3 px-5 py-4 text-xl md:text-2xl lg:text-3xl font-medium text-softwhite/90"
             >
               <span class="text-softwhite/70">Crafting delightful web experiences as a</span>
               <vue-writer
@@ -98,7 +106,7 @@
             <div
               v-for="stat in heroStats"
               :key="stat.label"
-              class="rounded-2xl border border-divider bg-surface p-4 backdrop-blur-brand transition-transform duration-300 hover:-translate-y-1 hover:shadow-glow"
+              class="glass-card p-4 transition-transform duration-300 hover:-translate-y-1 hover:shadow-glow"
             >
               <p class="text-2xl font-semibold text-softwhite">{{ stat.value }}</p>
               <p class="text-sm text-softwhite/60">{{ stat.label }}</p>
@@ -113,7 +121,7 @@
               class="absolute -inset-4 hidden md:block rounded-[40%] bg-gradient-to-br from-main/40 via-accent/30 to-primary/50 blur-2xl opacity-90"
             ></span>
             <div
-              class="relative w-[240px] md:w-[360px] lg:w-[420px] overflow-hidden rounded-[32px] border border-divider bg-surface-strong shadow-2xl backdrop-blur-brand"
+              class="glass-panel relative w-[240px] overflow-hidden rounded-[32px] md:w-[360px] lg:w-[420px]"
             >
               <div
                 class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"
@@ -134,6 +142,7 @@
               <Icon :icon="floating.icon" class="h-5 w-5 text-main" />
             </span>
           </div>
+        </div>
         </div>
       </div>
     </div>
