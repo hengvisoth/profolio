@@ -137,8 +137,15 @@ const captureSections = () => {
     .filter((el): el is HTMLElement => Boolean(el))
 }
 
+const ensureSections = () => {
+  if (!sectionNodes.length || sectionNodes.some((node) => !node.isConnected)) {
+    captureSections()
+  }
+}
+
 const updateActiveSection = () => {
   scrollFrame = 0
+  ensureSections()
   if (!sectionNodes.length) return
 
   const viewportTrigger = window.innerHeight * 0.3

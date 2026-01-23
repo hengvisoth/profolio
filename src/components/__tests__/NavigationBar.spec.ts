@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import NavigationBar from '@/components/NavigationBar.vue'
+import NavigationBar from '../NavigationBar.vue'
 
 vi.mock('gsap', () => ({
   gsap: {
