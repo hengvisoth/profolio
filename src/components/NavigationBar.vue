@@ -2,7 +2,6 @@
   <div>
     <nav
       class="glass-panel ios-nav"
-      :style="{ '--visible-count': visibleCount }"
       :data-expanded="isExpanded || isCompact"
       @mouseenter="setExpanded(true)"
       @mouseleave="setExpanded(false)"
@@ -76,8 +75,6 @@ const displayedItems = computed(() => {
   collapsed.push(navItems[activeIndex])
   return collapsed
 })
-
-const visibleCount = computed(() => displayedItems.value.length)
 
 const setExpanded = (value: boolean) => {
   if (isCompact.value) {
