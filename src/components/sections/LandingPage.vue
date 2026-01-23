@@ -51,9 +51,8 @@
               </div>
 
               <p class="max-w-xl text-base md:text-lg text-softwhite/80 leading-relaxed">
-                I craft responsive, accessible interfaces with modern Vue ecosystems. My work blends
-                thoughtful interaction design with performance-focused engineering, resulting in
-                experiences that feel polished, immersive, and fast on every device.
+                I build responsive, accessible Vue interfaces that balance interaction design with
+                performance for polished, fast experiences on any device.
               </p>
             </div>
 
@@ -117,7 +116,7 @@
                   class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"
                 ></div>
                 <img
-                  src="../../../public/pf.jpeg"
+                  src="https://i.pinimg.com/1200x/6f/40/21/6f4021518072461423c1137399ff1cc7.jpg"
                   alt="Visoth Profile"
                   class="relative z-10 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
                 />
