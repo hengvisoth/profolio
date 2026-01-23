@@ -104,7 +104,7 @@
             </div>
           </div>
 
-          <div data-aos="zoom-in-up" class="order-1 lg:order-2 mx-auto flex justify-center">
+          <div class="order-1 lg:order-2 mx-auto flex justify-center">
             <div class="relative">
               <span
                 class="absolute -inset-4 hidden md:block rounded-[40%] bg-gradient-to-br from-main/40 via-accent/30 to-primary/50 blur-2xl opacity-90"
@@ -118,7 +118,7 @@
                 <img
                   src="https://i.pinimg.com/1200x/6f/40/21/6f4021518072461423c1137399ff1cc7.jpg"
                   alt="Visoth Profile"
-                  class="relative z-10 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  class="object-cover transition-transform duration-700 ease-out hover:scale-110"
                 />
               </div>
 
@@ -163,8 +163,7 @@ const socailData = ref(socail)
 const socialLinks = [
   { icon: ['fab', 'linkedin'], url: socailData.value.linkedin.url },
   { icon: ['fab', 'github'], url: socailData.value.github.url },
-  { icon: ['fab', 'telegram'], url: socailData.value.telegram.url },
-  { icon: ['fab', 'facebook'], url: socailData.value.facebook.url }
+  { icon: ['fab', 'telegram'], url: socailData.value.telegram.url }
 ]
 
 const heroStats = [
