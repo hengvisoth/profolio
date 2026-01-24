@@ -36,15 +36,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, computed, nextTick } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed, nextTick, watch } from 'vue'
 import { gsap } from 'gsap'
 import { Icon } from '@iconify/vue'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { useStore } from '@/store/store'
 
 // Register GSAP's ScrollToPlugin
 gsap.registerPlugin(ScrollToPlugin)
 
-const activeSection = ref('#home') // Default active section
+const { state: storeState, setActiveSection: updateActiveSectionInStore } = useStore()
+
+const activeSection = ref(storeState.activeSection) // Default active section
 
 const navItems = [
   { id: '#home', label: 'Home', icon: 'ph:house-line-duotone', delay: 0 },
@@ -78,6 +81,21 @@ const displayedItems = computed(() => {
 })
 
 const visibleCount = computed(() => displayedItems.value.length)
+
+watch(
+  () => storeState.activeSection,
+  (section) => {
+    if (section !== activeSection.value) {
+      activeSection.value = section
+    }
+  }
+)
+
+watch(activeSection, (section) => {
+  if (storeState.activeSection !== section) {
+    updateActiveSectionInStore(section)
+  }
+})
 
 const setExpanded = (value: boolean) => {
   if (isCompact.value) {

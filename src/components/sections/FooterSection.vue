@@ -57,18 +57,14 @@
             </div>
 
             <!-- Languages -->
-            <div class="text-left md:text-right">
-              <h4 class="text-lg font-semibold uppercase text-softwhite md:text-2xl">Languages</h4>
-              <div class="mt-2 flex justify-start gap-4 text-sm md:justify-end md:text-base">
-                <p class="text-main font-medium">EN</p>
-                <p class="text-softwhite/80 font-medium">KH</p>
-                <p class="text-softwhite/60 font-medium">JP</p>
-                <p class="text-softwhite/60 font-medium">CH</p>
-              </div>
-            </div>
+            <LanguageSelector />
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import LanguageSelector from '@/components/LanguageSelector.vue'
+</script>
