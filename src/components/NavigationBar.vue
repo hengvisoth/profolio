@@ -2,7 +2,6 @@
   <div>
     <nav
       class="glass-panel ios-nav"
-      :style="{ '--visible-count': visibleCount }"
       :data-expanded="isExpanded || isCompact"
       @mouseenter="setExpanded(true)"
       @mouseleave="setExpanded(false)"
@@ -80,23 +79,6 @@ const displayedItems = computed(() => {
   return collapsed
 })
 
-const visibleCount = computed(() => displayedItems.value.length)
-
-watch(
-  () => storeState.activeSection,
-  (section) => {
-    if (section !== activeSection.value) {
-      activeSection.value = section
-    }
-  }
-)
-
-watch(activeSection, (section) => {
-  if (storeState.activeSection !== section) {
-    updateActiveSectionInStore(section)
-  }
-})
-
 const setExpanded = (value: boolean) => {
   if (isCompact.value) {
     isExpanded.value = true
@@ -158,8 +140,15 @@ const captureSections = () => {
     .filter((el): el is HTMLElement => Boolean(el))
 }
 
+const ensureSections = () => {
+  if (!sectionNodes.length || sectionNodes.some((node) => !node.isConnected)) {
+    captureSections()
+  }
+}
+
 const updateActiveSection = () => {
   scrollFrame = 0
+  ensureSections()
   if (!sectionNodes.length) return
 
   const viewportTrigger = window.innerHeight * 0.3

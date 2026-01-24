@@ -31,9 +31,11 @@
         >
           <!-- Image -->
           <div class="flex justify-center">
-            <div class="glass-panel flex h-full max-w-[400px] items-center justify-center overflow-hidden rounded-[32px] p-6">
+            <div
+              class="glass-panel flex h-full max-w-[400px] items-center justify-center overflow-hidden rounded-[32px] p-6"
+            >
               <img
-                src="../../../public/pf.jpeg"
+                src="https://i.pinimg.com/1200x/6f/40/21/6f4021518072461423c1137399ff1cc7.jpg"
                 alt="About Me"
                 class="h-[260px] w-[260px] rounded-full border border-white/10 object-cover shadow-[0_25px_60px_-40px_rgba(249,115,22,0.45)] md:h-[320px] md:w-[320px] lg:h-[360px] lg:w-[360px]"
               />
