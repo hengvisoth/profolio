@@ -2,7 +2,7 @@
 
 Personal portfolio site for Heng Ratanak Visoth, built with Vue 3 and Vite.
 
-## Tech Stack
+## Tech Stacks
 
 - Vue 3, Vite, TypeScript
 - Tailwind CSS, Flowbite
