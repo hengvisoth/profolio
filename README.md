@@ -1,6 +1,6 @@
 # Visoth Portfolio
 
-Personal portfolio site for Heng Ratanak Visoth, built with Vue 3 and Vite.
+Personal portfolio site for Heng Ratanak Visoth, built with Vue 3 and Vite
 
 ## Tech Stacks
 
