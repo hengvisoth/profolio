@@ -7,7 +7,7 @@ Personal portfolio site for Heng Ratanak Visoth, built with Vue 3 and Vite
 - Vue 3, Vite, TypeScript
 - Tailwind CSS, Flowbite
 - Animation: GSAP, AOS, Motion One
-- UI and icons: Swiper, Font Awesome
+- UI and icons: Swiper, Font Awesomes
 
 ## Getting Started
 
