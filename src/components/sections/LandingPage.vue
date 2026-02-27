@@ -116,7 +116,7 @@
                   class="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent"
                 ></div>
                 <img
-                  src="https://i.pinimg.com/1200x/6f/40/21/6f4021518072461423c1137399ff1cc7.jpg"
+                  src="../../../public/pf.jpeg"
                   alt="Visoth Profile"
                   class="object-cover transition-transform duration-700 ease-out hover:scale-110"
                 />
