@@ -89,10 +89,10 @@ const en: AppTranslations = {
   },
   landing: {
     availabilityTag: 'Available for opportunities',
-    heroGreeting: 'Hey, I\'m',
+    heroGreeting: "Hey, I'm",
     heroName: 'Visoth',
     heroTaglinePrefix: 'Crafting delightful web experiences as a',
-    heroRoles: ['Front-End Developer|', 'UI Engineer|', 'Design System Lover|'],
+    heroRoles: ['Full Stack Developer'],
     heroDescription:
       'I craft responsive, accessible interfaces with modern Vue ecosystems. My work blends thoughtful interaction design with performance-focused engineering, resulting in experiences that feel polished, immersive, and fast on every device.',
     primaryCta: 'Let’s collaborate',
@@ -125,7 +125,12 @@ const en: AppTranslations = {
     details: [
       { label: 'Degree', value: 'Software Engineering' },
       { label: 'Location', value: 'Phnom Penh, Cambodia' },
-      { label: 'Email', value: 'hengsoth68@gmail.com', isLink: true, href: 'mailto:hengsoth68@gmail.com' },
+      {
+        label: 'Email',
+        value: 'hengsoth68@gmail.com',
+        isLink: true,
+        href: 'mailto:hengsoth68@gmail.com'
+      },
       { label: 'Phone', value: '+855 (0) 96 681 5223', isLink: true, href: 'tel:+855966815223' },
       { label: 'Languages', value: 'Khmer, English' },
       { label: 'Telegram', value: '@visothhh', isLink: true, href: 'https://t.me/@visothhh' }

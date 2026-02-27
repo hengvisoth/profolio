@@ -43,7 +43,7 @@
                 <span class="text-softwhite/70">Crafting delightful web experiences as a</span>
                 <vue-writer
                   class="bg-clip-text text-transparent bg-gradient-to-r from-main via-softwhite to-accent"
-                  :array="['Front-End Developer|', 'UI Engineer|', 'Design System Lover|']"
+                  :array="['Full Stack Developer']"
                   :eraseSpeed="40"
                   :typeSpeed="90"
                   :delay="1200"
