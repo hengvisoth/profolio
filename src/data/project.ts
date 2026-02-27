@@ -140,7 +140,7 @@ export const projectsData: projectType[] = [
     startDate: 'Sep ,2023',
     endDate: 'Mar ,2024',
     short_desc:
-      'Built a full-stack LPR system with Vue.js and Flask, handling real-time license plate detection, vehicle tracking, and Telegram alerts for unrecognized plates. Deployed via Docker on Linux for smooth, scalable performance in a resort environment.',
+      'Built a full-stack LPR system with Vue.js, handling real-time license plate detection, vehicle tracking, and Telegram alerts for unrecognized plates. Deployed via Docker on Linux for smooth, scalable performance in a resort environment.',
     description: ``,
     imageUrl: '/projects/03/poster.jpg',
     gitHubRepo: 'https://github.com/hengvisoth',
@@ -155,10 +155,7 @@ export const projectsData: projectType[] = [
         name: 'Tailwind CSS',
         icon: Technologies.tailwindcss
       },
-      {
-        name: 'Flask',
-        icon: Technologies.flask
-      },
+
       {
         name: 'Docker',
         icon: Technologies.docker
@@ -357,11 +354,9 @@ export const projectsData: projectType[] = [
         icon: Technologies?.vite
       },
       {
-        name : 'GSAP',
+        name: 'GSAP',
         icon: Technologies?.gsap
       }
-    
-     
     ],
     screenshots: []
   }

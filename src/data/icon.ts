@@ -134,10 +134,7 @@ export const Technologies = {
     name: 'Linux',
     logo: 'https://img.icons8.com/color/56/linux.png'
   },
-  flask: {
-    name: 'Flask',
-    logo: 'https://img.icons8.com/color/56/flask.png'
-  },
+
   websocket: {
     name: 'WebSocket',
     logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3A_U3kiS3uEpm6O8cMc_khbHDPLu8jPaN-A&s'
@@ -149,14 +146,13 @@ export const Technologies = {
   googleMap: {
     name: 'GoogleMap',
     logo: 'https://img.freepik.com/premium-vector/google-maps-logo_578229-304.jpg'
-  } , 
-  vite : {
-    name : 'Vite',
-    logo : 'https://vitejs.dev/logo.svg'
-  } , 
-  gsap : {
-    name : 'GSAP',
-    logo : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3vteG2DudlxILcIB8idhgX49HFuCk4_nEtQ&s'
-  } , 
- 
+  },
+  vite: {
+    name: 'Vite',
+    logo: 'https://vitejs.dev/logo.svg'
+  },
+  gsap: {
+    name: 'GSAP',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3vteG2DudlxILcIB8idhgX49HFuCk4_nEtQ&s'
+  }
 }

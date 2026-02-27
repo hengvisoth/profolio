@@ -14,10 +14,7 @@ export const skillData: skillType[] = [
     name: 'Dart',
     icon: '/assets/skills/dart.png'
   },
-  {
-    name: 'Flask',
-    icon: '/assets/skills/flask.png'
-  },
+
   {
     name: 'Python',
     icon: '/assets/skills/python.svg'
@@ -35,6 +32,10 @@ export const skillData: skillType[] = [
 
   // Frontend
   {
+    name: 'Flutter',
+    icon: '/assets/skills/flutter.png'
+  },
+  {
     name: 'Vue Js',
     icon: '/assets/skills/vue.svg'
   },
@@ -46,17 +47,10 @@ export const skillData: skillType[] = [
     name: 'Next Js',
     icon: '/assets/skills/next.png'
   },
-  {
-    name: 'Flutter',
-    icon: '/assets/skills/flutter.png'
-  },
+
   {
     name: 'Android/IOS',
     icon: '/assets/skills/mobile.png'
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: '/assets/skills/tailwind.svg'
   },
 
   // Tool
