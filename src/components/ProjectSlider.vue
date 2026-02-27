@@ -3,7 +3,9 @@
     class="grid w-full grid-cols-1 gap-8 py-6 md:grid-cols-[1.1fr_1fr] md:py-10 lg:gap-12 lg:py-14"
   >
     <!-- left sides -->
-    <div class="glass-card order-last flex h-full flex-col justify-between gap-10 p-6 md:order-first md:p-8">
+    <div
+      class="glass-card order-last flex h-full flex-col justify-between gap-10 p-6 md:order-first md:p-8"
+    >
       <!-- index and role -->
       <div>
         <div>
@@ -20,17 +22,15 @@
               {{ roleAs }}
             </p>
             <!-- Date range -->
-            <p class="glass-chip text-[0.65rem] font-medium uppercase tracking-[0.35em] text-softwhite/80">
+            <!-- <p class="glass-chip text-[0.65rem] font-medium uppercase tracking-[0.35em] text-softwhite/80">
               <span class="text-softwhite">From</span>: {{ startDate }}
               <span class="mx-2 text-main">•</span>
               <span class="text-softwhite">To</span>: {{ endDate }}
-            </p>
+            </p> -->
           </div>
         </div>
         <div class="my-5">
-          <p
-            class="whitespace-pre-line leading-relaxed text-sm text-softwhite/80 md:text-base"
-          >
+          <p class="whitespace-pre-line leading-relaxed text-sm text-softwhite/80 md:text-base">
             {{ short_desc }}
           </p>
         </div>
