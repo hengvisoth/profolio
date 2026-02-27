@@ -1,28 +1,5 @@
 <template>
   <div class="text-left md:text-right" role="group" aria-label="Interface language">
-    <h4 class="text-lg font-semibold uppercase text-softwhite md:text-2xl">Languages</h4>
-    <div class="mt-2 flex flex-wrap items-center gap-3 md:justify-end">
-      <button
-        v-for="language in languages"
-        :key="language.code"
-        type="button"
-        class="language-chip"
-        :class="{
-          'language-chip--active': activeLanguage === language.code,
-          'language-chip--inactive': activeLanguage !== language.code,
-          'language-chip--unavailable': !language.available
-        }"
-        :aria-pressed="activeLanguage === language.code"
-        :title="
-          language.available
-            ? `Switch to ${language.name}`
-            : `${language.name} translation is coming soon`
-        "
-        @click="handleLanguageSelect(language)"
-      >
-        {{ language.label }}
-      </button>
-    </div>
     <transition name="fade">
       <p v-if="feedbackMessage" class="mt-2 text-xs font-medium text-softwhite/70 md:text-right">
         {{ feedbackMessage }}
