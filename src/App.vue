@@ -1,6 +1,6 @@
 <template>
   <DynamicBackdrop />
-  <NavigationBar />
+  <!-- <NavigationBar /> -->
   <RouterView />
 </template>
 
