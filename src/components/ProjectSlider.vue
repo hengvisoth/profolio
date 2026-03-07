@@ -57,36 +57,11 @@
 
         <!-- divider -->
         <div class="glass-divider"></div>
-
-        <!-- git and project detail -->
-        <div class="flex flex-row flex-wrap items-center gap-4">
-          <button
-            class="glass-chip group flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-softwhite/80 transition-transform duration-200 hover:-translate-y-1"
-          >
-            <Icon
-              class="h-5 w-5 text-main transition-transform duration-200 group-hover:scale-110"
-              icon="tdesign:arrow-right-up"
-            />
-            Preview
-          </button>
-
-          <a :href="gitHubUrl" target="_blank" rel="noopener noreferrer">
-            <span
-              class="glass-chip group flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-softwhite/80 transition-transform duration-200 hover:-translate-y-1"
-            >
-              <Icon
-                class="h-5 w-5 text-main transition-transform duration-200 group-hover:scale-110"
-                icon="mdi:github"
-              />
-              GitHub
-            </span>
-          </a>
-        </div>
       </div>
     </div>
 
     <!-- slider -->
-    <div class="glass-card flex h-full items-center justify-center overflow-hidden p-4">
+    <div class="flex h-full items-center justify-center overflow-hidden p-8">
       <div id="controls-carousel" class="relative w-full" data-carousel="static">
         <div class="relative flex items-center justify-center overflow-hidden">
           <Swiper
@@ -99,17 +74,9 @@
                 v-if="index === activeIndex"
                 :src="project.imageUrl"
                 data-aos="zoom-in"
-                class="glass-panel mx-auto h-[280px] max-w-full rounded-3xl border-0 bg-black/20 object-contain p-4 shadow-2xl md:h-[420px] md:max-w-[480px] lg:h-[460px]"
+                class="glass-panel mx-auto h-[280px] max-w-full rounded-3xl border-0 object-contain p-4 shadow-2xl md:h-[420px] md:max-w-[480px] lg:h-[460px]"
                 alt="Project Image"
               />
-
-              <!-- <img
-                :v-if="index == activeIndex"
-                :src="project.imageUrl"
-                data-aos="zoom-in"
-                class="max-w-[500px] max-h-[500px] object-container mx-auto"
-                alt="Project Image"
-              /> -->
             </SwiperSlide>
           </Swiper>
         </div>
