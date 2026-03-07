@@ -56,7 +56,7 @@
               </p>
             </div>
 
-            <div class="flex flex-wrap items-center gap-5">
+            <div class="flex flex-wrap items-end gap-5">
               <button
                 @click="handleContact"
                 data-aos="fade-up"
@@ -67,7 +67,7 @@
                 Let’s collaborate
               </button>
 
-              <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
+              <!-- <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
                 <span
                   data-aos="fade-up"
                   data-aos-delay="220"
@@ -83,7 +83,7 @@
                     Download CV
                   </span>
                 </span>
-              </a>
+              </a> -->
             </div>
 
             <div class="flex flex-wrap items-center gap-3 pt-2">
