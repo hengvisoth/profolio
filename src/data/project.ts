@@ -26,18 +26,6 @@ export const projectsData: projectType[] = [
     // ],
     technologies: [
       {
-        name: 'Vue Js',
-        icon: Technologies.vuejs
-      },
-      {
-        name: 'VueX',
-        icon: Technologies.vueX
-      },
-      {
-        name: 'Ant Design',
-        icon: Technologies.antDesign
-      },
-      {
         name: 'Node Js',
         icon: Technologies.nodejs
       },
@@ -49,11 +37,6 @@ export const projectsData: projectType[] = [
       {
         name: 'SQL Server',
         icon: Technologies.sqlServer
-      },
-
-      {
-        name: 'Prisma ORM',
-        icon: Technologies.prisma
       }
     ],
 
@@ -73,68 +56,68 @@ export const projectsData: projectType[] = [
   },
 
   // 02 Employee Management System
-  {
-    id: 2,
-    code: '02',
-    title: 'Employee Management System',
-    role: 'Full-Stack Developer',
-    startDate: 'Mar ,2024',
-    endDate: 'Jul ,2024',
-    short_desc:
-      'Built a full-stack employee management tool with Next.js and Django, featuring role-based access, CSV import/export, and secure APIs. Deployed the system on AWS with EC2, RDS, and Elastic IP, handling both frontend and backend ops for stable performance.',
-    description: ``,
-    imageUrl: '/projects/02/poster.jpg',
-    gitHubRepo: 'https://github.com/hengvisoth',
-    demo: '',
-    technologies: [
-      {
-        name: 'Postgre SQL',
-        icon: Technologies.typescript
-      },
-      {
-        name: 'Prisma ORM',
-        icon: Technologies.prisma
-      },
-      {
-        name: 'Nuxt Js',
-        icon: Technologies.nuxtjs
-      },
-      {
-        name: 'Tailwind CSS',
-        icon: Technologies.tailwindcss
-      },
-      {
-        name: 'Django',
-        icon: Technologies.django
-      },
-      {
-        name: 'AWS',
-        icon: Technologies.awsEc2
-      },
-      {
-        name: 'RDS',
-        icon: Technologies.rds
-      }
-    ],
+  // {
+  //   id: 2,
+  //   code: '02',
+  //   title: 'Employee Management System',
+  //   role: 'Full-Stack Developer',
+  //   startDate: 'Mar ,2024',
+  //   endDate: 'Jul ,2024',
+  //   short_desc:
+  //     'Built a full-stack employee management tool with Next.js and Django, featuring role-based access, CSV import/export, and secure APIs. Deployed the system on AWS with EC2, RDS, and Elastic IP, handling both frontend and backend ops for stable performance.',
+  //   description: ``,
+  //   imageUrl: '/projects/02/poster.jpg',
+  //   gitHubRepo: 'https://github.com/hengvisoth',
+  //   demo: '',
+  //   technologies: [
+  //     {
+  //       name: 'Postgre SQL',
+  //       icon: Technologies.typescript
+  //     },
+  //     {
+  //       name: 'Prisma ORM',
+  //       icon: Technologies.prisma
+  //     },
+  //     {
+  //       name: 'Nuxt Js',
+  //       icon: Technologies.nuxtjs
+  //     },
+  //     {
+  //       name: 'Tailwind CSS',
+  //       icon: Technologies.tailwindcss
+  //     },
+  //     {
+  //       name: 'Django',
+  //       icon: Technologies.django
+  //     },
+  //     {
+  //       name: 'AWS',
+  //       icon: Technologies.awsEc2
+  //     },
+  //     {
+  //       name: 'RDS',
+  //       icon: Technologies.rds
+  //     }
+  //   ],
 
-    screenshots: [
-      '/projects/facerecognition/pic1.jpg',
-      '/projects/facerecognition/pic2.jpg',
-      '/projects/facerecognition/pic3.jpg',
-      '/projects/facerecognition/pic4.jpg',
-      '/projects/facerecognition/pic5.jpg',
-      '/projects/facerecognition/pic6.jpg',
-      '/projects/facerecognition/pic7.jpg',
-      '/projects/facerecognition/pic8.jpg',
-      '/projects/facerecognition/pic9.jpg',
-      '/projects/facerecognition/pic10.jpg'
-    ]
-  },
+  //   screenshots: [
+  //     '/projects/facerecognition/pic1.jpg',
+  //     '/projects/facerecognition/pic2.jpg',
+  //     '/projects/facerecognition/pic3.jpg',
+  //     '/projects/facerecognition/pic4.jpg',
+  //     '/projects/facerecognition/pic5.jpg',
+  //     '/projects/facerecognition/pic6.jpg',
+  //     '/projects/facerecognition/pic7.jpg',
+  //     '/projects/facerecognition/pic8.jpg',
+  //     '/projects/facerecognition/pic9.jpg',
+  //     '/projects/facerecognition/pic10.jpg'
+  //   ]
+  // },
 
   // 03 License Plate Recognition System
   {
     id: 3,
-    code: '03',
+    code: '02',
     title: 'License Plate Recognition System',
     role: 'Full-Stack Developer',
     startDate: 'Sep ,2023',
@@ -176,7 +159,7 @@ export const projectsData: projectType[] = [
   // 04 License Plate Recognition System
   {
     id: 4,
-    code: '04',
+    code: '03',
     title: 'Face Recognition System',
     role: 'Front-End Developer',
     startDate: 'Aug ,2023',
@@ -195,10 +178,6 @@ export const projectsData: projectType[] = [
       {
         name: 'Tailwind CSS',
         icon: Technologies.tailwindcss
-      },
-      {
-        name: 'Flutter',
-        icon: Technologies.flutter
       },
       {
         name: 'Python',
@@ -222,45 +201,45 @@ export const projectsData: projectType[] = [
   },
 
   // 05 Shuttle Bus System
-  {
-    id: 5,
-    code: '05',
-    title: 'Shuttle Bus System',
-    role: 'Front-End Developer',
-    startDate: 'Apr ,2023',
-    endDate: 'Sep ,2023',
-    short_desc:
-      'Developed a web-based booking system with Vue.js and Tailwind CSS for students to reserve shuttle rides. Implemented ticket booking, confirmation, and cancellation features, then containerized and deployed the app on Ubuntu for reliable access.',
-    description: ``,
-    imageUrl: '/projects/05/poster.jpg',
-    gitHubRepo: 'https://github.com/hengvisoth',
-    demo: '',
-    technologies: [
-      {
-        name: 'Vue Js',
-        icon: Technologies.vuejs
-      },
-      {
-        name: 'Tailwind CSS',
-        icon: Technologies.tailwindcss
-      },
-      {
-        name: 'Docker',
-        icon: Technologies.docker
-      },
-      {
-        name: 'Linux',
-        icon: Technologies.linux
-      }
-    ],
+  // {
+  //   id: 5,
+  //   code: '05',
+  //   title: 'Shuttle Bus System',
+  //   role: 'Front-End Developer',
+  //   startDate: 'Apr ,2023',
+  //   endDate: 'Sep ,2023',
+  //   short_desc:
+  //     'Developed a web-based booking system with Vue.js and Tailwind CSS for students to reserve shuttle rides. Implemented ticket booking, confirmation, and cancellation features, then containerized and deployed the app on Ubuntu for reliable access.',
+  //   description: ``,
+  //   imageUrl: '/projects/05/poster.jpg',
+  //   gitHubRepo: 'https://github.com/hengvisoth',
+  //   demo: '',
+  //   technologies: [
+  //     {
+  //       name: 'Vue Js',
+  //       icon: Technologies.vuejs
+  //     },
+  //     {
+  //       name: 'Tailwind CSS',
+  //       icon: Technologies.tailwindcss
+  //     },
+  //     {
+  //       name: 'Docker',
+  //       icon: Technologies.docker
+  //     },
+  //     {
+  //       name: 'Linux',
+  //       icon: Technologies.linux
+  //     }
+  //   ],
 
-    screenshots: []
-  },
+  //   screenshots: []
+  // },
 
   // 06 Delivery Express System
   {
     id: 6,
-    code: '06',
+    code: '04',
     title: 'Delivery Express System',
     role: 'Front-End Mobile Developer',
     startDate: 'Jan ,2023',
@@ -292,7 +271,7 @@ export const projectsData: projectType[] = [
   // 07 E-commerce Shoe Store
   {
     id: 7,
-    code: '07',
+    code: '05',
     title: 'E-commerce Shoe Store',
     role: 'Full-Stack Developer',
     startDate: 'Sep ,2022',
@@ -324,7 +303,7 @@ export const projectsData: projectType[] = [
   // 08  role: 'Full-Stack Developer',
   {
     id: 8,
-    code: '08',
+    code: '06',
     title: 'Personal Profolio',
     role: 'Front-End Developer',
     startDate: '22, Jan ,2022',
