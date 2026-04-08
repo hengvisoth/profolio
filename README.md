@@ -56,10 +56,3 @@ pnpm run preview
 - `src/` - Vue components, routes, and app logic
 - `public/` - static assets
 
-## Repository
-
-- https://github.com/hengvisoth/profolio
-
-## Author
-
-- https://github.com/hengvisoth
