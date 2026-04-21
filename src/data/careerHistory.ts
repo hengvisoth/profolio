@@ -30,6 +30,7 @@ export const careerHistoryContent: CareerHistoryContent = {
         'Architected and deployed 2 cross-platform POS apps to the App Store and Google Play Store, owning the full SDLC.',
         'Integrated ABA Payway payment gateway to fully automate subscription management and renewals.',
         'Built a custom Flutter library via Method Channels to bridge native iOS and Android Bluetooth SDKs for hardware printers.',
+        'Developed a real-time device session management system with Socket.IO, enabling users to terminate active sessions instantly.',
         'Platform adopted by 30+ business owners for daily operations management.'
       ],
       tags: ['Flutter', 'Node.js', 'Socket.IO', 'ABA Payway', 'Firebase']

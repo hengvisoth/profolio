@@ -52,7 +52,7 @@ const navItems = [
   { id: '#home', label: 'Home', icon: 'ph:house-line-duotone', delay: 0 },
   { id: '#about', label: 'About', icon: 'ph:user-circle-duotone', delay: 120 },
   { id: '#skills', label: 'Skills', icon: 'ph:squares-four-duotone', delay: 240 },
-  { id: '#experience', label: 'Work', icon: 'ph:briefcase-duotone', delay: 360 },
+  { id: '#experience', label: 'Experience', icon: 'ph:briefcase-duotone', delay: 360 },
   { id: '#contact', label: 'Contact', icon: 'ph:paper-plane-tilt-duotone', delay: 480 }
 ]
 

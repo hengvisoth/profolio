@@ -3,6 +3,8 @@ export interface projectType {
     code: string;
     title: string;
     role:string;
+    company?: string;
+    outcome?: string;
     startDate: string;
     endDate: string;
     short_desc: string;

@@ -21,17 +21,25 @@
             <p class="text-main text-base font-medium md:text-lg">
               {{ roleAs }}
             </p>
-            <!-- Date range -->
-            <!-- <p class="glass-chip text-[0.65rem] font-medium uppercase tracking-[0.35em] text-softwhite/80">
-              <span class="text-softwhite">From</span>: {{ startDate }}
-              <span class="mx-2 text-main">•</span>
-              <span class="text-softwhite">To</span>: {{ endDate }}
-            </p> -->
+            <span
+              v-if="company"
+              class="glass-chip text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-softwhite/70"
+            >
+              <Icon icon="solar:buildings-2-bold-duotone" class="h-3.5 w-3.5 text-main" />
+              {{ company }}
+            </span>
           </div>
         </div>
         <div class="my-5">
           <p class="whitespace-pre-line leading-relaxed text-sm text-softwhite/80 md:text-base">
             {{ short_desc }}
+          </p>
+          <p
+            v-if="outcome"
+            class="mt-3 flex items-start gap-2 rounded-xl border border-main/20 bg-main/5 px-4 py-3 text-sm font-medium text-main"
+          >
+            <Icon icon="solar:medal-ribbons-star-bold-duotone" class="mt-0.5 h-4 w-4 shrink-0" />
+            {{ outcome }}
           </p>
         </div>
       </div>
@@ -132,6 +140,8 @@ const title = ref<string | null>('')
 const gitHubUrl = ref<string>('')
 const short_desc = ref<string | null>('')
 const technologies = ref<{ name: string; icon: any }[] | []>([{ name: '', icon: '' }])
+const company = ref<string | undefined>(undefined)
+const outcome = ref<string | undefined>(undefined)
 const startDate = ref<string>('None')
 const endDate = ref<string>('None')
 const isPrevDisabled = ref<boolean>(true)
@@ -175,6 +185,8 @@ const updateDetails = () => {
   short_desc.value = projects.value[activeIndex.value]?.short_desc || ''
   isPrevDisabled.value = activeIndex.value === 0
   isNextDisabled.value = activeIndex.value === projects.value.length - 1
+  company.value = projects.value[activeIndex.value]?.company
+  outcome.value = projects.value[activeIndex.value]?.outcome
   startDate.value = projects.value[activeIndex.value]?.startDate || 'None'
   endDate.value = projects.value[activeIndex.value]?.endDate || 'None'
 }

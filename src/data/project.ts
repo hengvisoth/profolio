@@ -9,6 +9,8 @@ export const projectsData: projectType[] = [
     code: '01',
     title: 'MB POS',
     role: 'Full-Stack Developer',
+    company: 'Tonaire Digital',
+    outcome: 'Live on App Store & Play Store — relied on by 30+ businesses for daily operations.',
     startDate: 'Jul ,2024',
     endDate: 'Present',
     short_desc:
@@ -120,6 +122,8 @@ export const projectsData: projectType[] = [
     code: '02',
     title: 'License Plate Recognition System',
     role: 'Full-Stack Developer',
+    company: 'Optimus Virtual',
+    outcome: 'Deployed 24/7 on Docker/Linux — automated Cambodian plate recognition with real-time Telegram alerts.',
     startDate: 'Sep ,2023',
     endDate: 'Mar ,2024',
     short_desc:
@@ -162,6 +166,8 @@ export const projectsData: projectType[] = [
     code: '03',
     title: 'Face Recognition System',
     role: 'Front-End Developer',
+    company: 'Kirirom Institute of Technology',
+    outcome: 'On-device FaceNet.tflite matching — real-time attendance tracking via Flutter + Vue.js dashboard.',
     startDate: 'Aug ,2023',
     endDate: 'Feb ,2024',
     short_desc:
@@ -242,6 +248,8 @@ export const projectsData: projectType[] = [
     code: '04',
     title: 'Delivery Express System',
     role: 'Front-End Mobile Developer',
+    company: 'GTech Cambodia',
+    outcome: 'Two Flutter apps (merchant + driver) published on Android & iOS with Google Maps routing.',
     startDate: 'Jan ,2023',
     endDate: 'Apr ,2023',
     short_desc:
@@ -274,6 +282,8 @@ export const projectsData: projectType[] = [
     code: '05',
     title: 'E-commerce Shoe Store',
     role: 'Full-Stack Developer',
+    company: 'Personal Project',
+    outcome: 'Full-stack with PayPal checkout, Prisma ORM, and custom RESTful APIs — end-to-end solo build.',
     startDate: 'Sep ,2022',
     endDate: 'May ,2025',
     short_desc:
@@ -304,9 +314,11 @@ export const projectsData: projectType[] = [
   {
     id: 8,
     code: '06',
-    title: 'Personal Profolio',
+    title: 'Personal Portfolio',
     role: 'Front-End Developer',
-    startDate: '22, Jan ,2022',
+    company: 'Personal Project',
+    outcome: 'GSAP + AOS animations, Vue 3 + TypeScript, deployed on Vercel.',
+    startDate: 'Jan ,2022',
     endDate: '**, Feb ,2022',
     short_desc: `
             Created a sleek, responsive portfolio with Vue 3, Tailwind CSS, and Vite, featuring GSAP/AOS animations and typewriter effects. Used TypeScript and Vitest for maintainable, well-tested code.

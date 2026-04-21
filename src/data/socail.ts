@@ -22,13 +22,5 @@ export const socail = {
   facebook: {
     name: 'facebook',
     url: 'https://www.facebook.com/pisoth.hrp/'
-  },
-  messanger: {
-    name: 'messanger',
-    url: 'https://m.me/'
-  },
-  instagram: {
-    name: 'instagram',
-    url: 'https://instagram.com/'
   }
 }

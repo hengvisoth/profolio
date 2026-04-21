@@ -24,7 +24,7 @@
               <span
                 class="h-2 w-2 rounded-full bg-main shadow-[0_0_12px_rgba(234,88,12,0.8)]"
               ></span>
-              Available for opportunities
+              Open to Senior Flutter / Full-Stack roles
             </div>
 
             <div class="space-y-4 md:space-y-6">
@@ -40,7 +40,7 @@
               <div
                 class="glass-card flex flex-wrap items-center gap-3 px-5 py-4 text-xl md:text-2xl lg:text-3xl font-medium text-softwhite/90"
               >
-                <span class="text-softwhite/70">Crafting delightful web experiences as a</span>
+                <span class="text-softwhite/70">Flutter · Vue.js · Node.js engineer —</span>
                 <vue-writer
                   class="bg-clip-text text-transparent bg-gradient-to-r from-main via-softwhite to-accent"
                   :array="['Full Stack Developer']"
@@ -51,8 +51,9 @@
               </div>
 
               <p class="max-w-xl text-base md:text-lg text-softwhite/80 leading-relaxed">
-                I build responsive, accessible Vue interfaces that balance interaction design with
-                performance for polished, fast experiences on any device.
+                Full-stack developer with 3+ years transforming manual workflows into scalable
+                mobile and web solutions — 10 production apps shipped, 30+ clients, 100+ daily
+                active users.
               </p>
             </div>
 
@@ -67,7 +68,7 @@
                 Let’s collaborate
               </button>
 
-              <!-- <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
+              <a href="/resume/Heng_RatanakVisoth_CV.pdf" download class="group inline-flex">
                 <span
                   data-aos="fade-up"
                   data-aos-delay="220"
@@ -83,7 +84,7 @@
                     Download CV
                   </span>
                 </span>
-              </a> -->
+              </a>
             </div>
 
             <div class="flex flex-wrap items-center gap-3 pt-2">
@@ -168,19 +169,19 @@ const socialLinks = [
 
 const heroStats = [
   {
-    value: '4+',
-    label: 'Years building apps',
-    caption: 'Hands-on with Vue, React, and design systems.'
+    value: '10+',
+    label: 'Production apps shipped',
+    caption: 'App Store & Play Store deployments across Flutter and web.'
   },
   {
-    value: '18+',
-    label: 'Projects shipped',
-    caption: 'From concept to launch with measurable impact.'
+    value: '30+',
+    label: 'Clients served',
+    caption: 'B2B & B2C products relied on daily by real businesses.'
   },
   {
-    value: '5',
-    label: 'Teams collaborated',
-    caption: 'Cross-functional squads across product and design.'
+    value: '100+',
+    label: 'Daily active users',
+    caption: 'Stable, zero-downtime platforms running in production.'
   }
 ]
 

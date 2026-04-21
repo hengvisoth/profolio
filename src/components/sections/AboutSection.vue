@@ -46,17 +46,37 @@
             <!-- Paragraph -->
             <div class="glass-card p-6 md:p-8">
               <h6 class="text-h3-sm font-semibold text-primary md:text-h3-md lg:text-h3-lg">
-                Passionate About Front-End Craft
+                Full-Stack &amp; Mobile Engineer
               </h6>
               <p class="mt-3 leading-relaxed text-softwhite/80">
-                I am deeply enthusiastic about crafting engaging, dynamic, and responsive web
-                interfaces. I enjoy translating design concepts into functional front-end
-                applications that elevate user experience. My passion lies in blending creativity
-                with clean, efficient code to bring digital products to life. Constantly exploring
-                modern frameworks and technologies, I aim to push boundaries and grow with every
-                project I take on. For me, development isn’t just about code—it’s about creating
-                meaningful, intuitive digital experiences.
+                Flutter developer with 3+ years of experience transforming manual business
+                workflows into modern, scalable mobile solutions. Successfully shipped
+                <span class="font-semibold text-softwhite">10 production-ready apps</span>,
+                modernizing daily operations for
+                <span class="font-semibold text-softwhite">30+ clients</span>. I specialize in
+                delivering 100% cross-platform parity from a single codebase, ensuring a completely
+                smooth, reliable daily experience for
+                <span class="font-semibold text-softwhite">100+ active users</span>.
               </p>
+            </div>
+
+            <!-- How I Build -->
+            <div class="glass-card p-6 md:p-8">
+              <h6 class="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-softwhite/50">
+                How I Build
+              </h6>
+              <ul class="flex flex-col gap-3">
+                <li
+                  v-for="principle in buildPrinciples"
+                  :key="principle"
+                  class="flex items-start gap-3 text-sm text-softwhite/80 md:text-base"
+                >
+                  <span class="mt-0.5 h-5 w-5 shrink-0 text-main">
+                    <Icon icon="solar:check-circle-bold" class="h-5 w-5" />
+                  </span>
+                  {{ principle }}
+                </li>
+              </ul>
             </div>
 
             <!-- Details -->
@@ -94,6 +114,12 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+
+const buildPrinciples = [
+  'Architecture-first: Repository pattern and clean separation of concerns across every project.',
+  'Cross-platform parity: single Flutter codebase shipped to App Store and Play Store.',
+  'Production-minded: Docker, Linux deployments — 100+ daily active users, zero downtime.'
+]
 
 const aboutDetails = [
   { label: 'Degree', value: 'Software Engineering', icon: 'hugeicons:student' },

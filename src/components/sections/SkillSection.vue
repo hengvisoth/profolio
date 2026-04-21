@@ -24,7 +24,19 @@
             inclusive user journeys.
           </p>
 
-          <div class="mt-8 flex flex-wrap justify-center gap-3 text-[0.7rem] uppercase tracking-[0.25em] text-softwhite/50">
+          <!-- Primary Stack -->
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <span
+              v-for="tech in primaryStack"
+              :key="tech"
+              class="glass-chip flex items-center gap-1.5 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-softwhite ring-1 ring-main/40"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-main"></span>
+              {{ tech }}
+            </span>
+          </div>
+
+          <div class="mt-4 flex flex-wrap justify-center gap-3 text-[0.7rem] uppercase tracking-[0.25em] text-softwhite/50">
             <span v-for="chip in categoryChips" :key="chip" class="glass-chip text-[0.65rem]">
               {{ chip }}
             </span>
@@ -61,10 +73,6 @@ import type { skillType } from '../../types/skill.dto'
 import { skillData } from '../../data/skill'
 
 const mySkills = ref<skillType[]>(skillData)
-const categoryChips = [
-  'Languages',
-  'Frontend Frameworks',
-  'Cloud & DevOps',
-  'Design Systems'
-]
+const primaryStack = ['Flutter', 'Vue.js', 'Node.js', 'TypeScript']
+const categoryChips = ['Languages', 'Frontend Frameworks', 'Cloud & DevOps', 'Design Systems']
 </script>
