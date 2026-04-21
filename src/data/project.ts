@@ -18,8 +18,7 @@ export const projectsData: projectType[] = [
     },
     startDate: 'Jul ,2024',
     endDate: 'Present',
-    short_desc:
-      'Built a cross-platform Point-of-Sale (POS) system with Flutter and Node.js, integrated banking APIs for smoother payments, and shipped mobile apps to both Play Store and App Store. Also crafted a Vue.js + Ant Design admin dashboard with Vuex for state management. Handled ops for 100+ daily users, keeping things running smooth and glitch-free.',
+    short_desc: 'Flutter + Node.js POS — ABA Payway payments, Bluetooth receipt printing, shipped to App Store & Play Store.',
     description: '',
     imageUrl: '/projects/01/poster.jpg',
     gitHubRepo: 'https://github.com/hengvisoth',
@@ -131,8 +130,7 @@ export const projectsData: projectType[] = [
     outcome: 'Deployed 24/7 on Docker/Linux — automated Cambodian plate recognition with real-time Telegram alerts.',
     startDate: 'Sep ,2023',
     endDate: 'Mar ,2024',
-    short_desc:
-      'Built a full-stack LPR system with Vue.js, handling real-time license plate detection, vehicle tracking, and Telegram alerts for unrecognized plates. Deployed via Docker on Linux for smooth, scalable performance in a resort environment.',
+    short_desc: 'Vue.js LPR dashboard — real-time plate detection, vehicle tracking, Telegram alerts. Dockerized on Linux.',
     description: ``,
     imageUrl: '/projects/03/poster.jpg',
     gitHubRepo: 'https://github.com/hengvisoth',
@@ -175,8 +173,7 @@ export const projectsData: projectType[] = [
     outcome: 'On-device FaceNet.tflite matching — real-time attendance tracking via Flutter + Vue.js dashboard.',
     startDate: 'Aug ,2023',
     endDate: 'Feb ,2024',
-    short_desc:
-      'Built a web dashboard with Vue.js and a Flutter mobile app for real-time attendance tracking using facial recognition. Integrated FaceNet.tflite for on-device face matching, and deployed the system with Docker on Linux for stable, scalable performance.',
+    short_desc: 'Vue.js + Flutter attendance system — FaceNet.tflite on-device recognition, Dockerized on Linux.',
     description: ``,
     imageUrl: '/projects/04/poster.jpg',
     gitHubRepo: 'https://github.com/hengvisoth',
@@ -257,8 +254,7 @@ export const projectsData: projectType[] = [
     outcome: 'Two Flutter apps (merchant + driver) published on Android & iOS with Google Maps routing.',
     startDate: 'Jan ,2023',
     endDate: 'Apr ,2023',
-    short_desc:
-      'Built two Flutter apps for merchants and drivers to manage deliveries, with real-time tracking via Google Maps, OTP registration, push notifications, and Telegram alerts. Published on both Android and iOS platforms.',
+    short_desc: 'Two Flutter apps (merchant + driver) — Google Maps routing, OTP, push notifications, published on Android & iOS.',
     description: ``,
     imageUrl: '/projects/06/poster.jpg',
     gitHubRepo: 'https://github.com/hengvisoth',
@@ -291,8 +287,7 @@ export const projectsData: projectType[] = [
     outcome: 'Full-stack with PayPal checkout, Prisma ORM, and custom RESTful APIs — end-to-end solo build.',
     startDate: 'Sep ,2022',
     endDate: 'May ,2025',
-    short_desc:
-      'Built a full-stack e-commerce site with Vue.js, Node.js, and MongoDB—featuring user auth, PayPal checkout, and a clean, responsive UI. Handled everything from product management to order flow via custom RESTful APIs.',
+    short_desc: 'Vue.js + NestJS e-commerce — PayPal checkout, Prisma ORM, custom RESTful APIs end-to-end.',
     description: ``,
     imageUrl: '/projects/07/poster.jpg',
     gitHubRepo: 'https://github.com/hengvisoth',
@@ -325,9 +320,7 @@ export const projectsData: projectType[] = [
     outcome: 'GSAP + AOS animations, Vue 3 + TypeScript, deployed on Vercel.',
     startDate: 'Jan ,2022',
     endDate: '**, Feb ,2022',
-    short_desc: `
-            Created a sleek, responsive portfolio with Vue 3, Tailwind CSS, and Vite, featuring GSAP/AOS animations and typewriter effects. Used TypeScript and Vitest for maintainable, well-tested code.
-            `,
+    short_desc: 'Vue 3 + TypeScript portfolio — GSAP/AOS animations, Tailwind CSS, deployed on Vercel.',
     description: ``,
     imageUrl: '/projects/08/poster.png',
     gitHubRepo: 'https://github.com/hengvisoth',
