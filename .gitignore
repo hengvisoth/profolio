@@ -28,3 +28,8 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# TypeScript compiler emit artifacts (src should only contain .ts/.vue source files)
+src/**/*.js
+src/**/*.js.map
+src/**/*.vue.js
