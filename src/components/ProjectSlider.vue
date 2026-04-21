@@ -4,86 +4,87 @@
   >
     <!-- left sides -->
     <div
-      class="glass-card order-last flex h-full flex-col justify-between gap-10 p-6 md:order-first md:p-8"
+      class="glass-card order-last flex h-full flex-col justify-between gap-6 p-6 md:order-first md:p-8"
     >
-      <!-- index and role -->
-      <div>
-        <div>
-          <h1 class="text-main text-6xl font-Angkor font-bold md:text-7xl lg:text-8xl">
-            {{ projectCode }}
-          </h1>
-          <h2 class="text-2xl font-semibold text-softwhite md:text-3xl lg:text-4xl">
-            {{ title }}
-          </h2>
-          <div
-            class="mt-4 flex flex-col items-start gap-2 md:flex-row md:items-center md:justify-between"
-          >
-            <p class="text-main text-base font-medium md:text-lg">
-              {{ roleAs }}
-            </p>
-            <span
-              v-if="company"
-              class="glass-chip text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-softwhite/70"
+      <Transition name="project-content" mode="out-in">
+        <div :key="activeIndex" class="flex flex-col gap-6">
+          <!-- index and role -->
+          <div>
+            <h1 class="text-main text-6xl font-Angkor font-bold md:text-7xl lg:text-8xl">
+              {{ projectCode }}
+            </h1>
+            <h2 class="text-2xl font-semibold text-softwhite md:text-3xl lg:text-4xl">
+              {{ title }}
+            </h2>
+            <div
+              class="mt-4 flex flex-col items-start gap-2 md:flex-row md:items-center md:justify-between"
             >
-              <Icon icon="solar:buildings-2-bold-duotone" class="h-3.5 w-3.5 text-main" />
-              {{ company }}
-            </span>
+              <p class="text-main text-base font-medium md:text-lg">
+                {{ roleAs }}
+              </p>
+              <span
+                v-if="company"
+                class="glass-chip text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-softwhite/70"
+              >
+                <Icon icon="solar:buildings-2-bold-duotone" class="h-3.5 w-3.5 text-main" />
+                {{ company }}
+              </span>
+            </div>
+            <div class="mt-4">
+              <p class="whitespace-pre-line leading-relaxed text-sm text-softwhite/80 md:text-base">
+                {{ short_desc }}
+              </p>
+              <p
+                v-if="outcome"
+                class="mt-3 flex items-start gap-2 rounded-xl border border-main/20 bg-main/5 px-4 py-3 text-sm font-medium text-main"
+              >
+                <Icon icon="solar:medal-ribbons-star-bold-duotone" class="mt-0.5 h-4 w-4 shrink-0" />
+                {{ outcome }}
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="my-5">
-          <p class="whitespace-pre-line leading-relaxed text-sm text-softwhite/80 md:text-base">
-            {{ short_desc }}
-          </p>
-          <p
-            v-if="outcome"
-            class="mt-3 flex items-start gap-2 rounded-xl border border-main/20 bg-main/5 px-4 py-3 text-sm font-medium text-main"
-          >
-            <Icon icon="solar:medal-ribbons-star-bold-duotone" class="mt-0.5 h-4 w-4 shrink-0" />
-            {{ outcome }}
-          </p>
-        </div>
-      </div>
 
-      <!-- Case Study -->
-      <div v-if="caseStudy" class="glass-card flex flex-col gap-3 p-5">
-        <p class="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-main">Case Study</p>
-        <div class="grid gap-3 sm:grid-cols-2">
+          <!-- Case Study -->
           <div
-            v-for="item in caseStudyItems"
-            :key="item.label"
-            class="flex flex-col gap-1 rounded-xl border border-white/5 bg-white/[0.03] p-3"
+            v-if="caseStudy"
+            class="glass-card flex flex-col gap-3 p-5"
           >
-            <span class="flex items-center gap-1.5 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-softwhite/40">
-              <Icon :icon="item.icon" class="h-3 w-3 text-main/70" />
-              {{ item.label }}
-            </span>
-            <p class="text-xs leading-relaxed text-softwhite/80">{{ item.value }}</p>
+            <p class="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-main">Case Study</p>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div
+                v-for="item in caseStudyItems"
+                :key="item.label"
+                class="flex flex-col gap-1 rounded-xl border border-white/5 bg-white/[0.03] p-3"
+              >
+                <span class="flex items-center gap-1.5 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-softwhite/40">
+                  <Icon :icon="item.icon" class="h-3 w-3 text-main/70" />
+                  {{ item.label }}
+                </span>
+                <p class="text-xs leading-relaxed text-softwhite/80">{{ item.value }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div class="glass-card flex flex-col gap-4 p-5">
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="glass-chip group flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em]"
+                v-for="tech in technologies"
+                :key="tech.name"
+              >
+                <img
+                  :src="tech.icon?.logo"
+                  :alt="tech.name"
+                  class="mr-2 inline-block h-4 w-4 rounded bg-white p-0.5 transition-transform duration-200 ease-out group-hover:scale-105 md:h-5 md:w-5"
+                />
+                <span class="text-softwhite/80">{{ tech.name }}</span>
+              </span>
+            </div>
+            <div class="glass-divider"></div>
           </div>
         </div>
-      </div>
-
-      <!-- ------------------------- -->
-      <div class="glass-card flex flex-col gap-4 p-5">
-        <!-- Technologies -->
-        <div class="flex flex-wrap gap-3">
-          <!-- Display technologies in the desired format -->
-          <span
-            class="glass-chip group flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em]"
-            v-for="(tech, index) in technologies"
-            :key="tech.name"
-          >
-            <img
-              :src="tech.icon?.logo"
-              :alt="tech.name"
-              class="mr-2 inline-block h-4 w-4 rounded bg-white p-0.5 transition-transform duration-200 ease-out group-hover:scale-105 md:h-5 md:w-5"
-            />
-            <span class="text-softwhite/80">{{ tech.name }}</span>
-          </span>
-        </div>
-
-        <!-- divider -->
-        <div class="glass-divider"></div>
-      </div>
+      </Transition>
     </div>
 
     <!-- slider -->
@@ -223,7 +224,23 @@ const updateDetails = () => {
 
 // Set initial values when the component is mounted
 onMounted(() => {
-  console.log('Component mounted')
   updateDetails()
 })
 </script>
+
+<style scoped>
+.project-content-enter-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.project-content-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.project-content-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.project-content-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+</style>

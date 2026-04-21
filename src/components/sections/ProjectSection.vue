@@ -4,25 +4,13 @@
       class="mx-auto w-full max-w-[1440px] px-6 pt-10 pb-12 md:px-16 md:pb-16 lg:px-24 lg:pb-20 large:px-0"
     >
       <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
-        <span
-          class="pointer-events-none absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gradient-to-br from-main/20 via-accent/15 to-primary/20 blur-3xl"
-        ></span>
-        <span
-          class="pointer-events-none absolute -bottom-28 -right-16 h-64 w-64 rounded-full bg-gradient-to-tl from-accent/20 via-transparent to-main/20 blur-3xl"
-        ></span>
-
         <div data-aos="zoom-in" class="relative z-10 flex flex-col items-center text-center">
           <div class="glass-chip text-xs uppercase tracking-[0.3em] text-softwhite/70">
             <span class="h-2 w-2 rounded-full bg-main"></span>
             Selected Work
           </div>
           <h2 class="mt-6 text-3xl font-semibold md:mt-8 md:text-4xl lg:text-[2.75rem]">
-            <span class="text-softwhite/80">Things I've</span>
-            <span
-              class="block bg-gradient-to-r from-main via-accent to-primary bg-clip-text text-transparent"
-            >
-              built &amp; shipped
-            </span>
+            Projects
           </h2>
           <p class="mt-4 max-w-2xl text-sm text-softwhite/70 md:text-base">
             Production apps across mobile, web, and full-stack — each with real users and

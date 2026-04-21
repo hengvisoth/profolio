@@ -4,9 +4,6 @@
     class="relative mx-auto max-w-[1440px] px-6 pt-20 pb-16 md:px-16 lg:px-24"
   >
     <div class="glass-panel relative overflow-hidden px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
-      <span class="pointer-events-none absolute inset-x-10 top-0 h-40 rounded-b-full bg-gradient-to-b from-main/25 via-transparent to-transparent blur-3xl"></span>
-      <span class="pointer-events-none absolute -left-16 bottom-0 hidden h-64 w-64 rounded-full bg-gradient-to-tr from-accent/25 via-main/25 to-primary/30 blur-3xl opacity-80 lg:block"></span>
-
       <div class="relative z-10 grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
         <div class="flex flex-col gap-8">
           <div class="max-w-lg space-y-5">
@@ -15,12 +12,11 @@
               Let’s connect
             </div>
             <h2 class="text-3xl font-semibold text-softwhite md:text-4xl lg:text-[2.8rem]">
-              Let’s shape something memorable together
+              Get in touch
             </h2>
-            <p class="text-sm text-softwhite/70 md:text-base">
-              Share a challenge, product idea, or feature concept. I respond within 24 hours with a
-              thoughtful follow-up and next steps. Projects of all sizes welcome—from rapid landing
-              pages to design systems.
+            <p class="text-sm text-softwhite/60 md:text-base">
+              Have a project or role in mind? Send a message and I’ll get back to you within 24
+              hours on weekdays.
             </p>
           </div>
 
@@ -57,9 +53,8 @@
           </div>
         </div>
 
-        <div class="glass-panel relative overflow-hidden rounded-[28px] bg-background/70 p-6 shadow-2xl md:p-8">
-          <span class="pointer-events-none absolute inset-0 bg-gradient-to-br from-main/5 via-transparent to-primary/10 opacity-0 transition duration-500"></span>
-          <form @submit.prevent="sendEmail" class="relative space-y-6">
+        <div class="glass-panel p-6 md:p-8">
+          <form @submit.prevent="sendEmail" class="space-y-6">
             <div class="space-y-2">
               <label for="email" class="text-xs uppercase tracking-[0.25em] text-softwhite/40">Email</label>
               <div class="relative flex items-center gap-3 rounded-xl border border-divider bg-surface px-4">
@@ -106,7 +101,7 @@
 
             <button
               type="submit"
-              class="relative inline-flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-main via-accent to-primary px-6 py-3 text-sm font-semibold text-background shadow-glow transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_50px_-20px_rgba(56,189,248,0.55)] active:scale-95"
+              class="inline-flex w-full items-center justify-center gap-3 rounded-full bg-main px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-strong active:scale-95"
             >
               <Icon icon="solar:paper-plane-bold" class="h-5 w-5" />
               Send message

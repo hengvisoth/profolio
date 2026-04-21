@@ -13,10 +13,9 @@
       </div>
       <div class="space-y-2">
         <h3 class="text-base font-semibold text-softwhite">{{ title }}</h3>
-        <span class="inline-block h-[2px] w-10 rounded-full bg-main/70 group-hover:w-14 group-hover:bg-main transition-all duration-300"></span>
-        <p class="text-xs text-softwhite/50">
-          Crafting scalable interfaces with a focus on developer experience and polished delivery.
-        </p>
+        <span
+          class="inline-block h-[2px] w-10 rounded-full bg-main/70 group-hover:w-14 group-hover:bg-main transition-all duration-300"
+        ></span>
       </div>
     </div>
   </div>

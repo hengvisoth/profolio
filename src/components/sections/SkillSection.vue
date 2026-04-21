@@ -5,23 +5,17 @@
       class="relative mx-auto w-full max-w-[1440px] px-6 pt-10 pb-16 md:px-16 lg:px-24 large:px-0"
     >
       <div class="glass-panel relative overflow-hidden px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20">
-        <span class="pointer-events-none absolute -top-40 right-1/2 h-72 w-72 translate-x-1/2 rounded-full bg-gradient-to-br from-main/25 via-accent/20 to-primary/30 blur-3xl"></span>
-        <span class="pointer-events-none absolute -bottom-48 -right-20 hidden h-80 w-80 rounded-full bg-gradient-to-tr from-accent/20 via-main/20 to-primary/30 blur-3xl opacity-80 lg:block"></span>
-
         <div class="relative z-10 flex flex-col items-center text-center">
           <div data-aos="zoom-in" class="glass-chip text-xs uppercase tracking-[0.3em] text-softwhite/70">
             <span class="h-2 w-2 rounded-full bg-main"></span>
             Toolkit highlights
           </div>
           <h2 class="mt-6 text-3xl font-semibold md:mt-8 md:text-4xl lg:text-[2.75rem]">
-            <span class="text-softwhite/80">Full-stack craft powered by</span>
-            <span class="block bg-gradient-to-r from-main via-accent to-primary bg-clip-text text-transparent">modern tooling</span>
+            What I work with
           </h2>
-          <p class="mt-4 max-w-3xl text-sm text-softwhite/70 md:text-base">
-            I combine strong fundamentals with a curated set of frameworks, libraries, and cloud
-            tooling to launch resilient, performant experiences. This stack evolves with each
-            project, but the quality bar stays high: clean architecture, pixel-level detail, and
-            inclusive user journeys.
+          <p class="mt-4 max-w-2xl text-sm text-softwhite/60 md:text-base">
+            The tools I use daily across mobile, backend, and frontend — chosen for reliability
+            and production results, not hype.
           </p>
 
           <!-- Primary Stack -->

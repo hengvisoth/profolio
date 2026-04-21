@@ -2,10 +2,9 @@
   <div class="mx-auto flex h-full w-full flex-col items-center overflow-hidden">
     <LandingPage />
     <AboutSection />
-    <SkillSection />
     <ProjectSection />
     <ExperienceSection />
-    <ContactSection />
+    <SkillSection />
     <FooterSection />
   </div>
 </template>

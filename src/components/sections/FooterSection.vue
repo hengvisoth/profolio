@@ -1,9 +1,6 @@
 <template>
   <section class="mx-auto w-full max-w-[1440px] px-6 py-12 md:px-16 lg:px-24">
     <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-12 lg:px-16 lg:py-14">
-      <span class="pointer-events-none absolute -right-16 top-[-45%] h-64 w-64 rounded-full bg-gradient-to-b from-main/20 via-transparent to-primary/20 blur-3xl"></span>
-      <span class="pointer-events-none absolute -left-24 bottom-[-35%] h-72 w-72 rounded-full bg-gradient-to-tr from-primary/20 via-transparent to-main/20 blur-3xl"></span>
-
       <div class="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_1fr]">
         <!-- Left: Intro + Message -->
         <div class="glass-card flex flex-col gap-6 p-6 md:p-8">
@@ -11,8 +8,7 @@
             Let’s build
           </div>
           <p class="text-lg font-semibold leading-relaxed text-softwhite md:text-xl">
-            Turn your ideas into reality with efficient and scalable web development solutions.
-            Let’s create something impactful together.
+            Looking for a Flutter or full-stack engineer? Let’s talk.
           </p>
           <div class="glass-divider"></div>
           <div class="flex flex-wrap gap-4">

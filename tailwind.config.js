@@ -24,22 +24,8 @@ export default {
         lg: '1440px'
       },
       fontFamily: {
-        navigation: [
-          'Poppins',
-          'sans-serif',
-          'Dancing Script',
-          'cursive',
-          'Dangrek',
-          'cursive',
-          'Fasthand',
-          'cursive'
-        ],
-        poppins: ['Poppins', 'sans-serif'],
-        Angkor: ['Angkor', 'cursive'],
-        DancingScript: ['Dancing Script', 'cursive'],
-        Dangrek: ['Dangrek', 'cursive'],
-        Fasthand: ['Fasthand', 'cursive'],
-        'jetbrains-mono': ['JetBrains Mono', 'monospace']
+        sans: ['Host Grotesk', 'sans-serif'],
+        Angkor: ['Angkor', 'cursive']
       },
       fontSize: {
         // Header font sizes h1
@@ -75,19 +61,19 @@ export default {
         'sm-btn': '0.6rem' // This is equivalent to Tailwind's 'xs'
       },
       colors: {
-        main: '#fb923c',
+        main: '#f97316',
         primary: '#f97316',
         'primary-strong': '#ea580c',
-        accent: '#fdba74',
-        background: '#0f172a',
-        surface: 'rgba(15, 23, 42, 0.65)',
-        'surface-strong': 'rgba(10, 12, 24, 0.82)',
-        softwhite: '#f8fafc',
+        accent: '#fb923c',
+        background: '#111111',
+        surface: '#222222',
+        'surface-strong': '#1a1a1a',
+        softwhite: '#f1f5f9',
         text: '#e5e7eb',
-        'text-muted': '#9ca3af',
+        'text-muted': '#71717a',
         divider: 'rgba(255, 255, 255, 0.08)',
-        button: '#1f2937',
-        'button-hover': '#334155',
+        button: '#222222',
+        'button-hover': '#2a2a2a',
         disabled: '#4b5563',
         danger: '#f87171'
       },

@@ -4,21 +4,13 @@
       class="mx-auto w-full max-w-[1440px] px-6 pt-10 pb-12 md:px-16 md:pb-16 lg:px-24 lg:pb-20 large:px-0"
     >
       <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
-        <span
-          class="pointer-events-none absolute -top-28 right-[-10%] h-72 w-72 rounded-full bg-gradient-to-br from-main/20 via-accent/15 to-primary/20 blur-3xl"
-        ></span>
-        <span
-          class="pointer-events-none absolute -bottom-32 left-[-12%] h-80 w-80 rounded-full bg-gradient-to-r from-primary/20 via-transparent to-main/25 blur-3xl"
-        ></span>
-
         <div class="relative z-10">
           <div data-aos="zoom-in" class="flex flex-col items-center text-center">
             <div class="glass-chip text-xs uppercase tracking-[0.35em] text-softwhite/70">
               {{ careerHistoryContent.label }}
             </div>
             <h1 class="mt-4 text-3xl font-semibold md:text-4xl lg:text-[2.75rem]">
-              {{ primaryTitleWord }}
-              <span class="text-main">{{ accentTitle }}</span>
+              {{ primaryTitleWord }} {{ accentTitle }}
             </h1>
             <p class="mt-5 max-w-3xl text-sm leading-relaxed text-softwhite/75 md:text-base">
               {{ careerHistoryContent.description }}

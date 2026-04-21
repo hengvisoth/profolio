@@ -13,7 +13,8 @@
   z-index: -3;
   pointer-events: none;
   overflow: hidden;
-  background: radial-gradient(circle at 15% 20%, rgba(253, 186, 116, 0.18), transparent 55%),
+  background:
+    radial-gradient(circle at 15% 20%, rgba(253, 186, 116, 0.18), transparent 55%),
     radial-gradient(circle at 80% 10%, rgba(249, 115, 22, 0.15), transparent 60%),
     linear-gradient(180deg, rgba(11, 15, 28, 0.95), rgba(9, 6, 4, 0.85));
 }
@@ -31,7 +32,12 @@
 }
 
 .layer--beam {
-  background: conic-gradient(from 240deg at 50% 50%, rgba(255, 214, 170, 0.2), transparent 40%, rgba(253, 186, 116, 0.12));
+  background: conic-gradient(
+    from 240deg at 50% 50%,
+    rgba(255, 214, 170, 0.2),
+    transparent 40%,
+    rgba(253, 186, 116, 0.12)
+  );
   transform: rotate(8deg) scale(1.05);
   opacity: 0.55;
   animation: beamDrift 24s linear infinite;
