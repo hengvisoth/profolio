@@ -28,6 +28,13 @@
             >
               Call Now
             </a>
+            <a
+              href="/resume/Heng_RatanakVisoth_CV.pdf"
+              download
+              class="glass-chip text-[0.75rem] font-semibold uppercase tracking-[0.3em] text-main"
+            >
+              Download CV
+            </a>
           </div>
         </div>
 

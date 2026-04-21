@@ -44,6 +44,24 @@
         </div>
       </div>
 
+      <!-- Case Study -->
+      <div v-if="caseStudy" class="glass-card flex flex-col gap-3 p-5">
+        <p class="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-main">Case Study</p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div
+            v-for="item in caseStudyItems"
+            :key="item.label"
+            class="flex flex-col gap-1 rounded-xl border border-white/5 bg-white/[0.03] p-3"
+          >
+            <span class="flex items-center gap-1.5 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-softwhite/40">
+              <Icon :icon="item.icon" class="h-3 w-3 text-main/70" />
+              {{ item.label }}
+            </span>
+            <p class="text-xs leading-relaxed text-softwhite/80">{{ item.value }}</p>
+          </div>
+        </div>
+      </div>
+
       <!-- ------------------------- -->
       <div class="glass-card flex flex-col gap-4 p-5">
         <!-- Technologies -->
@@ -142,6 +160,17 @@ const short_desc = ref<string | null>('')
 const technologies = ref<{ name: string; icon: any }[] | []>([{ name: '', icon: '' }])
 const company = ref<string | undefined>(undefined)
 const outcome = ref<string | undefined>(undefined)
+const caseStudy = ref<projectType['caseStudy']>(undefined)
+const caseStudyItems = computed(() =>
+  caseStudy.value
+    ? [
+        { label: 'Problem', icon: 'solar:danger-triangle-bold-duotone', value: caseStudy.value.problem },
+        { label: 'Architecture', icon: 'solar:cpu-bolt-bold-duotone', value: caseStudy.value.architecture },
+        { label: 'Challenge', icon: 'solar:bolt-bold-duotone', value: caseStudy.value.challenge },
+        { label: 'Result', icon: 'solar:medal-ribbons-star-bold-duotone', value: caseStudy.value.result }
+      ]
+    : []
+)
 const startDate = ref<string>('None')
 const endDate = ref<string>('None')
 const isPrevDisabled = ref<boolean>(true)
@@ -187,6 +216,7 @@ const updateDetails = () => {
   isNextDisabled.value = activeIndex.value === projects.value.length - 1
   company.value = projects.value[activeIndex.value]?.company
   outcome.value = projects.value[activeIndex.value]?.outcome
+  caseStudy.value = projects.value[activeIndex.value]?.caseStudy
   startDate.value = projects.value[activeIndex.value]?.startDate || 'None'
   endDate.value = projects.value[activeIndex.value]?.endDate || 'None'
 }

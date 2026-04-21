@@ -43,10 +43,11 @@
                 <span class="text-softwhite/70">Flutter · Vue.js · Node.js engineer —</span>
                 <vue-writer
                   class="bg-clip-text text-transparent bg-gradient-to-r from-main via-softwhite to-accent"
-                  :array="['Full Stack Developer']"
+                  :array="['Flutter Developer', 'Full Stack Developer', 'Mobile App Developer']"
                   :eraseSpeed="40"
-                  :typeSpeed="90"
+                  :typeSpeed="80"
                   :delay="1200"
+                  :intervals="[3000, 3000, 3000]"
                 />
               </div>
 

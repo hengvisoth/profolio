@@ -5,6 +5,12 @@ export interface projectType {
     role:string;
     company?: string;
     outcome?: string;
+    caseStudy?: {
+        problem: string;
+        architecture: string;
+        challenge: string;
+        result: string;
+    };
     startDate: string;
     endDate: string;
     short_desc: string;

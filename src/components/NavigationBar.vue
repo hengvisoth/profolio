@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, computed, nextTick, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed, nextTick } from 'vue'
 import { gsap } from 'gsap'
 import { Icon } from '@iconify/vue'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -44,7 +44,7 @@ import { useStore } from '@/store/store'
 // Register GSAP's ScrollToPlugin
 gsap.registerPlugin(ScrollToPlugin)
 
-const { state: storeState, setActiveSection: updateActiveSectionInStore } = useStore()
+const { state: storeState } = useStore()
 
 const activeSection = ref(storeState.activeSection) // Default active section
 
@@ -52,8 +52,9 @@ const navItems = [
   { id: '#home', label: 'Home', icon: 'ph:house-line-duotone', delay: 0 },
   { id: '#about', label: 'About', icon: 'ph:user-circle-duotone', delay: 120 },
   { id: '#skills', label: 'Skills', icon: 'ph:squares-four-duotone', delay: 240 },
-  { id: '#experience', label: 'Experience', icon: 'ph:briefcase-duotone', delay: 360 },
-  { id: '#contact', label: 'Contact', icon: 'ph:paper-plane-tilt-duotone', delay: 480 }
+  { id: '#projects', label: 'Projects', icon: 'ph:code-block-duotone', delay: 360 },
+  { id: '#experience', label: 'Experience', icon: 'ph:briefcase-duotone', delay: 480 },
+  { id: '#contact', label: 'Contact', icon: 'ph:paper-plane-tilt-duotone', delay: 600 }
 ]
 
 const MAX_COLLAPSED_ITEMS = 3

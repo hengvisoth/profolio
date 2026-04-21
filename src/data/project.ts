@@ -1,4 +1,3 @@
-import { icon } from '@fortawesome/fontawesome-svg-core'
 import { Technologies } from './icon'
 import type { projectType } from '@/types/project.dto'
 
@@ -11,6 +10,12 @@ export const projectsData: projectType[] = [
     role: 'Full-Stack Developer',
     company: 'Tonaire Digital',
     outcome: 'Live on App Store & Play Store — relied on by 30+ businesses for daily operations.',
+    caseStudy: {
+      problem: 'B2B clients managed inventory and payments with paper records, causing reconciliation errors and lost revenue.',
+      architecture: 'Repository pattern across Flutter + Node.js; single source of truth via SQL Server with real-time sync over Socket.IO.',
+      challenge: 'Bridged native iOS and Android Bluetooth SDKs via Flutter Method Channels to integrate third-party receipt printers — no existing Flutter library existed.',
+      result: '30+ businesses onboarded; ABA Payway integration fully automated subscription renewals with zero manual intervention.'
+    },
     startDate: 'Jul ,2024',
     endDate: 'Present',
     short_desc:

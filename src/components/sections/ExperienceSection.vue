@@ -38,14 +38,28 @@
             >
               <div class="grid gap-5 lg:grid-cols-[220px_1fr] lg:gap-8">
                 <div class="space-y-3">
-                  <div
-                    class="inline-flex rounded-full border border-main/20 bg-main/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-main"
-                  >
-                    {{ experience.dateRange }}
+                  <div class="flex flex-wrap items-center gap-2">
+                    <div
+                      class="inline-flex rounded-full border border-main/20 bg-main/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-main"
+                    >
+                      {{ experience.dateRange }}
+                    </div>
+                    <span
+                      v-if="experience.companyType === 'Part-time'"
+                      class="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent"
+                    >
+                      <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+                      Part-time
+                    </span>
                   </div>
                   <div>
                     <p class="text-lg font-semibold text-softwhite">{{ experience.company }}</p>
-                    <p class="mt-1 text-sm text-softwhite/60">{{ experience.companyType }}</p>
+                    <p
+                      v-if="experience.companyType !== 'Part-time'"
+                      class="mt-1 text-sm text-softwhite/60"
+                    >
+                      {{ experience.companyType }}
+                    </p>
                   </div>
                 </div>
 
@@ -121,20 +135,25 @@
               </div>
             </div>
 
-            <div class="mt-8 grid gap-4">
+            <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               <article
                 v-for="(achievement, index) in careerHistoryContent.achievements"
                 :key="achievement.title"
                 :data-aos="'fade-up'"
                 :data-aos-delay="index * 80"
-                class="glass-card p-5 md:p-6"
+                class="glass-card flex flex-col gap-4 p-5 md:p-6"
               >
-                <h3 class="text-lg font-semibold text-softwhite md:text-xl">
-                  {{ achievement.title }}
-                </h3>
-                <p class="mt-3 text-sm leading-relaxed text-softwhite/70 md:text-base">
-                  {{ achievement.description }}
-                </p>
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl border border-main/30 bg-main/10">
+                  <Icon :icon="achievementIcons[index] ?? 'solar:medal-ribbons-star-bold-duotone'" class="h-5 w-5 text-main" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-softwhite md:text-xl">
+                    {{ achievement.title }}
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-softwhite/70 md:text-base">
+                    {{ achievement.description }}
+                  </p>
+                </div>
               </article>
             </div>
           </div>
@@ -149,9 +168,16 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { Icon } from '@iconify/vue'
 import { careerHistoryContent } from '@/data/careerHistory'
 
 const titleWords = computed(() => careerHistoryContent.title.split(' '))
 const primaryTitleWord = computed(() => titleWords.value[0] ?? '')
 const accentTitle = computed(() => titleWords.value.slice(1).join(' '))
+
+const achievementIcons = [
+  'solar:cup-star-bold-duotone',
+  'solar:medal-ribbons-star-bold-duotone',
+  'solar:star-shine-bold-duotone'
+]
 </script>
