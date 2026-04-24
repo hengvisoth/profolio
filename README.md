@@ -50,9 +50,10 @@ pnpm run preview
 - `pnpm run lint` - run ESLint (auto-fix enabled)
 - `pnpm run format` - format `src/` with Prettier
 
-## Project Structure
+## Project Structureee
 
 - `index.html` - app entry HTML
 - `src/` - Vue components, routes, and app logic
 - `public/` - static assets
 
+ 
