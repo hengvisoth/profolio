@@ -284,11 +284,11 @@ onBeforeUnmount(() => {
 
 .ios-nav__button:hover {
   transform: translateX(-4px);
-  color: #f97316;
+  color: rgb(var(--c-main));
 }
 
 .ios-nav__button--active {
-  color: #f97316;
+  color: rgb(var(--c-main));
 }
 
 .ios-nav__icon {
@@ -300,7 +300,7 @@ onBeforeUnmount(() => {
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(15, 23, 42, 0.5);
-  box-shadow: 0 18px 45px -28px rgba(249, 115, 22, 0.55);
+  box-shadow: 0 18px 45px -28px rgb(var(--c-main) / 0.55);
   transition:
     transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
     background 0.35s ease;
@@ -308,7 +308,7 @@ onBeforeUnmount(() => {
 }
 
 .ios-nav__button--active .ios-nav__icon {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.28), rgba(249, 115, 22, 0.12));
+  background: linear-gradient(135deg, rgb(var(--c-main) / 0.28), rgb(var(--c-main) / 0.12));
   transform: translateX(-2px) scale(1.05);
 }
 

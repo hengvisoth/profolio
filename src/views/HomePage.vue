@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto flex h-full w-full flex-col items-center overflow-hidden">
+  <div class="mx-auto flex h-full w-full flex-col items-center overflow-x-clip">
     <LandingPage />
     <AboutSection />
     <ProjectSection />

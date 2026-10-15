@@ -61,25 +61,25 @@ export default {
         'sm-btn': '0.6rem' // This is equivalent to Tailwind's 'xs'
       },
       colors: {
-        main: '#f97316',
-        primary: '#f97316',
-        'primary-strong': '#ea580c',
-        accent: '#fb923c',
-        background: '#111111',
-        surface: '#222222',
-        'surface-strong': '#1a1a1a',
-        softwhite: '#f1f5f9',
-        text: '#e5e7eb',
-        'text-muted': '#71717a',
+        main: 'rgb(var(--c-main) / <alpha-value>)',
+        primary: 'rgb(var(--c-main) / <alpha-value>)',
+        'primary-strong': 'rgb(var(--c-main-strong) / <alpha-value>)',
+        accent: 'rgb(var(--c-accent) / <alpha-value>)',
+        background: 'rgb(var(--c-bg) / <alpha-value>)',
+        surface: 'rgb(var(--c-surface) / <alpha-value>)',
+        'surface-strong': 'rgb(var(--c-surface-strong) / <alpha-value>)',
+        softwhite: 'rgb(var(--c-text) / <alpha-value>)',
+        text: 'rgb(var(--c-text) / <alpha-value>)',
+        'text-muted': 'rgb(var(--c-muted) / <alpha-value>)',
         divider: 'rgba(255, 255, 255, 0.08)',
-        button: '#222222',
-        'button-hover': '#2a2a2a',
+        button: 'rgb(var(--c-surface) / <alpha-value>)',
+        'button-hover': 'rgb(var(--c-surface-hover) / <alpha-value>)',
         disabled: '#4b5563',
         danger: '#f87171'
       },
       boxShadow: {
-        glow: '0 20px 40px -15px rgba(249, 115, 22, 0.45)',
-        'glow-warm': '0 18px 35px -12px rgba(234, 88, 12, 0.5)'
+        glow: '0 20px 40px -15px rgb(var(--c-main) / 0.45)',
+        'glow-warm': '0 18px 35px -12px rgb(var(--c-main-strong) / 0.5)'
       },
       backdropBlur: {
         brand: '20px'

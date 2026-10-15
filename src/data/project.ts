@@ -18,6 +18,13 @@ export const projectsData: projectType[] = [
     },
     startDate: 'Jul ,2024',
     endDate: 'Present',
+    art: 'pos',
+    highlights: [
+      { icon: 'solar:card-bold-duotone', label: 'ABA Payway payments' },
+      { icon: 'solar:bluetooth-bold-duotone', label: 'Bluetooth receipt printing' },
+      { icon: 'solar:refresh-circle-bold-duotone', label: 'Real-time sync over Socket.IO' },
+      { icon: 'solar:shop-bold-duotone', label: '30+ businesses onboarded' }
+    ],
     short_desc: 'Flutter + Node.js POS — ABA Payway payments, Bluetooth receipt printing, shipped to App Store & Play Store.',
     description: '',
     imageUrl: '/projects/01/poster.jpg',
@@ -130,6 +137,13 @@ export const projectsData: projectType[] = [
     outcome: 'Deployed 24/7 on Docker/Linux — automated Cambodian plate recognition with real-time Telegram alerts.',
     startDate: 'Sep ,2023',
     endDate: 'Mar ,2024',
+    art: 'plate',
+    highlights: [
+      { icon: 'solar:scanner-bold-duotone', label: 'Real-time plate detection' },
+      { icon: 'solar:car-bold-duotone', label: 'Vehicle tracking' },
+      { icon: 'solar:plain-bold-duotone', label: 'Telegram alerts' },
+      { icon: 'solar:server-2-bold-duotone', label: 'Docker on Linux, running 24/7' }
+    ],
     short_desc: 'Vue.js LPR dashboard — real-time plate detection, vehicle tracking, Telegram alerts. Dockerized on Linux.',
     description: ``,
     imageUrl: '/projects/03/poster.jpg',
@@ -173,6 +187,13 @@ export const projectsData: projectType[] = [
     outcome: 'On-device FaceNet.tflite matching — real-time attendance tracking via Flutter + Vue.js dashboard.',
     startDate: 'Aug ,2023',
     endDate: 'Feb ,2024',
+    art: 'face',
+    highlights: [
+      { icon: 'solar:face-scan-circle-bold-duotone', label: 'On-device FaceNet.tflite' },
+      { icon: 'solar:user-id-bold-duotone', label: 'Real-time attendance' },
+      { icon: 'solar:monitor-bold-duotone', label: 'Vue.js dashboard' },
+      { icon: 'solar:smartphone-bold-duotone', label: 'Flutter mobile app' }
+    ],
     short_desc: 'Vue.js + Flutter attendance system — FaceNet.tflite on-device recognition, Dockerized on Linux.',
     description: ``,
     imageUrl: '/projects/04/poster.jpg',
@@ -254,6 +275,13 @@ export const projectsData: projectType[] = [
     outcome: 'Two Flutter apps (merchant + driver) published on Android & iOS with Google Maps routing.',
     startDate: 'Jan ,2023',
     endDate: 'Apr ,2023',
+    art: 'delivery',
+    highlights: [
+      { icon: 'solar:map-point-bold-duotone', label: 'Google Maps routing' },
+      { icon: 'solar:key-bold-duotone', label: 'OTP verification' },
+      { icon: 'solar:bell-bold-duotone', label: 'Push notifications' },
+      { icon: 'solar:delivery-bold-duotone', label: 'Merchant and driver apps' }
+    ],
     short_desc: 'Two Flutter apps (merchant + driver) — Google Maps routing, OTP, push notifications, published on Android & iOS.',
     description: ``,
     imageUrl: '/projects/06/poster.jpg',
@@ -287,6 +315,13 @@ export const projectsData: projectType[] = [
     outcome: 'Full-stack with PayPal checkout, Prisma ORM, and custom RESTful APIs — end-to-end solo build.',
     startDate: 'Sep ,2022',
     endDate: 'May ,2025',
+    art: 'shop',
+    highlights: [
+      { icon: 'solar:wallet-bold-duotone', label: 'PayPal checkout' },
+      { icon: 'solar:database-bold-duotone', label: 'Prisma ORM' },
+      { icon: 'solar:cloud-bold-duotone', label: 'Custom RESTful APIs' },
+      { icon: 'solar:cart-large-2-bold-duotone', label: 'Vue.js storefront' }
+    ],
     short_desc: 'Vue.js + NestJS e-commerce — PayPal checkout, Prisma ORM, custom RESTful APIs end-to-end.',
     description: ``,
     imageUrl: '/projects/07/poster.jpg',
@@ -307,46 +342,6 @@ export const projectsData: projectType[] = [
       }
     ],
 
-    screenshots: []
-  },
-
-  // 08  role: 'Full-Stack Developer',
-  {
-    id: 8,
-    code: '06',
-    title: 'Personal Portfolio',
-    role: 'Front-End Developer',
-    company: 'Personal Project',
-    outcome: 'GSAP + AOS animations, Vue 3 + TypeScript, deployed on Vercel.',
-    startDate: 'Jan ,2022',
-    endDate: '**, Feb ,2022',
-    short_desc: 'Vue 3 + TypeScript portfolio — GSAP/AOS animations, Tailwind CSS, deployed on Vercel.',
-    description: ``,
-    imageUrl: '/projects/08/poster.png',
-    gitHubRepo: 'https://github.com/hengvisoth',
-    demo: '',
-    technologies: [
-      {
-        name: 'Vue JS',
-        icon: Technologies?.vuejs
-      },
-      {
-        name: 'Tailwind CSS',
-        icon: Technologies?.tailwindcss
-      },
-      {
-        name: 'TypeScript',
-        icon: Technologies?.typescript
-      },
-      {
-        name: 'Vite',
-        icon: Technologies?.vite
-      },
-      {
-        name: 'GSAP',
-        icon: Technologies?.gsap
-      }
-    ],
     screenshots: []
   }
 ]

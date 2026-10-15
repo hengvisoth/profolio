@@ -13,6 +13,11 @@ export interface projectType {
     };
     startDate: string;
     endDate: string;
+    art?: 'pos' | 'plate' | 'face' | 'delivery' | 'shop';
+    highlights?: {
+        icon: string;
+        label: string;
+    }[];
     short_desc: string;
     description: string;
     technologies: {

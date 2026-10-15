@@ -84,10 +84,10 @@ onBeforeUnmount(() => clearFeedback())
 }
 
 .language-chip--active {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.05));
-  color: #f97316;
-  border-color: rgba(249, 115, 22, 0.45);
-  box-shadow: 0 12px 32px -18px rgba(249, 115, 22, 0.55);
+  background: linear-gradient(135deg, rgb(var(--c-main) / 0.2), rgb(var(--c-main) / 0.05));
+  color: rgb(var(--c-main));
+  border-color: rgb(var(--c-main) / 0.45);
+  box-shadow: 0 12px 32px -18px rgb(var(--c-main) / 0.55);
 }
 
 .language-chip--inactive {
@@ -97,9 +97,9 @@ onBeforeUnmount(() => clearFeedback())
 }
 
 .language-chip--inactive:hover {
-  color: #f97316;
+  color: rgb(var(--c-main));
   transform: translateY(-3px);
-  border-color: rgba(249, 115, 22, 0.35);
+  border-color: rgb(var(--c-main) / 0.35);
 }
 
 .language-chip--unavailable {

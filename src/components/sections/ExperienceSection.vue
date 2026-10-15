@@ -1,175 +1,233 @@
 <template>
   <section id="experience" class="mb-10 md:mb-20 lg:mb-32">
-    <div
-      class="mx-auto w-full max-w-[1440px] px-6 pt-10 pb-12 md:px-16 md:pb-16 lg:px-24 lg:pb-20 large:px-0"
-    >
-      <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16">
-        <div class="relative z-10">
-          <div data-aos="zoom-in" class="flex flex-col items-center text-center">
-            <div class="glass-chip text-xs uppercase tracking-[0.35em] text-softwhite/70">
-              {{ careerHistoryContent.label }}
-            </div>
-            <h1 class="mt-4 text-3xl font-semibold md:text-4xl lg:text-[2.75rem]">
-              {{ primaryTitleWord }} {{ accentTitle }}
-            </h1>
-            <p class="mt-5 max-w-3xl text-sm leading-relaxed text-softwhite/75 md:text-base">
-              {{ careerHistoryContent.description }}
-            </p>
-            <div class="mt-6 w-24">
-              <div class="glass-divider"></div>
-            </div>
-          </div>
+    <div class="mx-auto w-full max-w-[1440px] px-6 py-10 md:px-16 md:py-16 lg:px-24 large:px-0">
+      <div class="max-w-2xl">
+        <h2 class="text-[clamp(1.9rem,4vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+          {{ content.title }}
+        </h2>
+        <p class="mt-4 text-base text-softwhite/65 md:text-lg">{{ content.description }}</p>
+      </div>
 
-          <div class="mt-12 grid gap-6 lg:gap-8">
-            <article
-              v-for="(experience, index) in careerHistoryContent.experiences"
-              :key="`${experience.company}-${experience.dateRange}`"
-              :data-aos="'fade-up'"
-              :data-aos-delay="index * 80"
-              class="glass-card p-5 md:p-7"
+      <!-- Tenure chart: each bar sits where the job sits on the calendar, so overlaps show. -->
+      <div ref="chart" class="mt-12 md:mt-16" :class="{ shown }">
+        <ol>
+          <li aria-hidden="true" class="md:grid md:grid-cols-[280px_1fr] md:gap-x-6">
+            <span class="hidden md:block"></span>
+            <span class="relative block h-5">
+              <span
+                v-for="tick in ticks"
+                :key="tick.label"
+                class="absolute text-xs tabular-nums text-softwhite/40"
+                :class="tick.nearEnd ? '-translate-x-full pr-1.5' : 'pl-1.5'"
+                :style="{ left: tick.left }"
+              >
+                {{ tick.label }}
+              </span>
+            </span>
+          </li>
+
+          <li v-for="(role, index) in rows" :key="`${role.company}-${role.dateRange}`">
+            <div
+              class="grid items-center gap-x-6 gap-y-2 py-3.5 md:grid-cols-[280px_1fr]"
+              :title="role.dateRange"
             >
-              <div class="grid gap-5 lg:grid-cols-[220px_1fr] lg:gap-8">
-                <div class="space-y-3">
-                  <div class="flex flex-wrap items-center gap-2">
-                    <div
-                      class="inline-flex rounded-full border border-main/20 bg-main/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-main"
-                    >
-                      {{ experience.dateRange }}
-                    </div>
-                    <span
-                      v-if="experience.companyType === 'Part-time'"
-                      class="inline-flex items-center gap-1 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-[0.6rem] font-bold uppercase tracking-[0.2em] text-accent"
-                    >
-                      <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
-                      Part-time
-                    </span>
-                  </div>
-                  <div>
-                    <p class="text-lg font-semibold text-softwhite">{{ experience.company }}</p>
-                    <p
-                      v-if="experience.companyType !== 'Part-time'"
-                      class="mt-1 text-sm text-softwhite/60"
-                    >
-                      {{ experience.companyType }}
-                    </p>
-                  </div>
-                </div>
-
-                <div class="space-y-5">
-                  <div class="flex items-start gap-4">
-                    <div class="mt-2 hidden items-start lg:flex">
-                      <span class="h-3 w-3 rounded-full bg-main shadow-[0_0_18px_rgba(249,115,22,0.8)]"></span>
-                    </div>
-                    <div class="flex-1">
-                      <h2 class="text-xl font-semibold text-softwhite md:text-2xl">
-                        {{ experience.role }}
-                      </h2>
-                      <ul class="mt-4 space-y-3 text-sm leading-relaxed text-softwhite/75 md:text-base">
-                        <li
-                          v-for="bullet in experience.bullets"
-                          :key="bullet"
-                          class="flex items-start gap-3"
-                        >
-                          <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-main/80"></span>
-                          <span>{{ bullet }}</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="flex flex-wrap gap-2">
-                    <span
-                      v-for="tag in experience.tags"
-                      :key="tag"
-                      class="glass-chip text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-softwhite/80"
-                    >
-                      {{ tag }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="mt-16">
-            <div data-aos="fade-up" class="flex flex-col items-start">
-              <div class="glass-chip text-xs uppercase tracking-[0.35em] text-softwhite/70">
-                {{ careerHistoryContent.educationLabel }}
-              </div>
-              <h2 class="mt-4 text-2xl font-semibold text-softwhite md:text-3xl">
-                <span class="text-main">{{ careerHistoryContent.educationTitle }}</span>
-              </h2>
+              <span class="block">
+                <span class="block font-semibold text-softwhite">{{ role.company }}</span>
+                <span class="block text-sm text-softwhite/50">{{ role.role }}</span>
+              </span>
+              <span class="relative block h-8">
+                <span
+                  v-for="tick in ticks"
+                  :key="tick.label"
+                  class="absolute inset-y-0 w-px bg-white/[0.07]"
+                  :style="{ left: tick.left }"
+                ></span>
+                <span
+                  class="bar absolute inset-y-1 rounded-md"
+                  :class="role.partTime ? 'hatch' : 'bg-main'"
+                  :style="{ left: role.left, width: role.width, '--d': `${index * 0.12}s` }"
+                ></span>
+                <span
+                  class="bar-label absolute top-1/2 -translate-y-1/2 whitespace-nowrap text-xs tabular-nums text-softwhite/55"
+                  :style="{ ...role.labelPos, '--d': `${index * 0.12}s` }"
+                >
+                  {{ role.duration }}
+                </span>
+              </span>
             </div>
+          </li>
+        </ol>
+        <p class="mt-3 text-sm text-softwhite/40">Hatched bars were part-time.</p>
+      </div>
 
-            <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              <article
-                v-for="(item, index) in careerHistoryContent.education"
-                :key="`${item.degree}-${item.school}`"
-                :data-aos="'fade-up'"
-                :data-aos-delay="index * 80"
-                class="glass-card p-5 md:p-6"
+      <div class="mt-16 grid gap-14 border-t border-white/10 pt-14 md:mt-24 lg:grid-cols-2 lg:gap-24">
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight md:text-3xl">{{ content.educationTitle }}</h3>
+          <ul class="mt-6">
+            <li
+              v-for="item in content.education"
+              :key="`${item.degree}-${item.school}`"
+              class="flex items-baseline justify-between gap-6 border-t border-white/10 py-4 first:border-t-0 first:pt-0"
+            >
+              <div>
+                <p class="font-medium text-softwhite">{{ item.degree }}</p>
+                <p class="mt-1 text-sm text-softwhite/50">{{ item.school }}</p>
+              </div>
+              <span class="shrink-0 text-sm tabular-nums text-softwhite/45">{{ item.yearRange }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold tracking-tight md:text-3xl">{{ content.achievementsLabel }}</h3>
+          <ul class="mt-6 space-y-6">
+            <li
+              v-for="(achievement, index) in content.achievements"
+              :key="achievement.title"
+              class="flex gap-4"
+            >
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-main/10 text-main"
               >
-                <div class="flex items-start justify-between gap-4">
-                  <h3 class="text-lg font-semibold text-softwhite">{{ item.degree }}</h3>
-                  <span class="text-sm font-medium text-main">{{ item.yearRange }}</span>
-                </div>
-                <p class="mt-4 text-sm leading-relaxed text-softwhite/70 md:text-base">
-                  {{ item.school }}
+                <Icon :icon="achievementIcons[index] ?? achievementIcons[0]" class="h-6 w-6" />
+              </span>
+              <div>
+                <p class="font-medium text-softwhite">{{ achievement.title }}</p>
+                <p class="mt-1 text-sm leading-relaxed text-softwhite/55">
+                  {{ achievement.description }}
                 </p>
-              </article>
-            </div>
-          </div>
-
-          <div class="mt-14">
-            <div data-aos="fade-up" class="flex flex-col items-start">
-              <div class="glass-chip text-xs uppercase tracking-[0.35em] text-softwhite/70">
-                {{ careerHistoryContent.achievementsLabel }}
               </div>
-            </div>
-
-            <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              <article
-                v-for="(achievement, index) in careerHistoryContent.achievements"
-                :key="achievement.title"
-                :data-aos="'fade-up'"
-                :data-aos-delay="index * 80"
-                class="glass-card flex flex-col gap-4 p-5 md:p-6"
-              >
-                <div class="flex h-10 w-10 items-center justify-center rounded-2xl border border-main/30 bg-main/10">
-                  <Icon :icon="achievementIcons[index] ?? 'solar:medal-ribbons-star-bold-duotone'" class="h-5 w-5 text-main" />
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-softwhite md:text-xl">
-                    {{ achievement.title }}
-                  </h3>
-                  <p class="mt-3 text-sm leading-relaxed text-softwhite/70 md:text-base">
-                    {{ achievement.description }}
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
+
     <div class="mt-12 flex w-full items-center justify-center">
-      <div class="glass-divider max-w-xl"></div>
+      <div class="h-px w-[65%] max-w-xl bg-divider"></div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { Icon } from '@iconify/vue'
-import { careerHistoryContent } from '@/data/careerHistory'
-
-const titleWords = computed(() => careerHistoryContent.title.split(' '))
-const primaryTitleWord = computed(() => titleWords.value[0] ?? '')
-const accentTitle = computed(() => titleWords.value.slice(1).join(' '))
+import { careerHistoryContent as content } from '@/data/careerHistory'
 
 const achievementIcons = [
   'solar:cup-star-bold-duotone',
   'solar:medal-ribbons-star-bold-duotone',
   'solar:star-shine-bold-duotone'
 ]
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+// 'Sep 2025' -> a month counter, so spans between dates are plain subtraction.
+const monthIndex = (text: string) => {
+  const match = text.match(/([A-Za-z]{3})\s+(\d{4})/)
+  return match ? Number(match[2]) * 12 + MONTHS.indexOf(match[1]) : 0
+}
+
+const spans = content.experiences.map((role) => {
+  const [from, to] = role.dateRange.split(' - ')
+  // The end month is worked in full, so the bar runs to the start of the next one.
+  return { start: monthIndex(from), end: monthIndex(to) + 1 }
+})
+const first = Math.min(...spans.map((s) => s.start))
+const last = Math.max(...spans.map((s) => s.end))
+const percent = (months: number) => `${((months / (last - first)) * 100).toFixed(3)}%`
+
+const duration = (months: number) => {
+  const years = Math.floor(months / 12)
+  const rest = months % 12
+  if (!years) return `${rest} months`
+  return rest ? `${years} yr ${rest} mo` : `${years} yr`
+}
+
+const rows = content.experiences.map((role, index) => {
+  const { start, end } = spans[index]
+  const total = last - first
+  // The duration sits just past the bar's end, or just before its start when the bar nears the edge.
+  const labelPos =
+    (end - first) / total > 0.82
+      ? { right: `calc(${100 - ((start - first) / total) * 100}% + 8px)` }
+      : { left: `calc(${((end - first) / total) * 100}% + 8px)` }
+  return {
+    company: role.company,
+    role: role.role,
+    dateRange: role.dateRange,
+    partTime: role.companyType === 'Part-time',
+    left: percent(start - first),
+    width: percent(end - start),
+    duration: duration(end - start),
+    labelPos
+  }
+})
+
+const ticks: { label: string; left: string; nearEnd: boolean }[] = []
+for (let year = Math.ceil(first / 12); year * 12 < last; year++) {
+  if (year * 12 <= first) continue
+  // A label that would run past the right edge is drawn to the left of its line instead.
+  const nearEnd = (year * 12 - first) / (last - first) > 0.9
+  ticks.push({ label: String(year), left: percent(year * 12 - first), nearEnd })
+}
+
+// Bars grow in once, the first time the chart scrolls into view.
+const chart = ref<HTMLElement | null>(null)
+const shown = ref(false)
+let observer: IntersectionObserver | null = null
+onMounted(() => {
+  if (!chart.value || !('IntersectionObserver' in window)) {
+    shown.value = true
+    return
+  }
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return
+      shown.value = true
+      observer?.disconnect()
+    },
+    { threshold: 0.35 }
+  )
+  observer.observe(chart.value)
+})
+onBeforeUnmount(() => observer?.disconnect())
 </script>
+
+<style scoped>
+.bar {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s),
+    filter 0.2s;
+}
+.shown .bar {
+  transform: scaleX(1);
+}
+.bar-label {
+  opacity: 0;
+  transition: opacity 0.4s ease calc(var(--d, 0s) + 0.7s);
+}
+.shown .bar-label {
+  opacity: 1;
+}
+.hatch {
+  border: 1px solid rgb(var(--c-main) / 0.6);
+  background: repeating-linear-gradient(
+    135deg,
+    rgb(var(--c-main) / 0.5) 0 6px,
+    rgb(var(--c-main) / 0.14) 6px 12px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transform: none;
+    transition: none;
+  }
+  .bar-label {
+    opacity: 1;
+    transition: none;
+  }
+}
+</style>

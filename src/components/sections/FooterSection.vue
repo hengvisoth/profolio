@@ -1,66 +1,54 @@
 <template>
-  <section class="mx-auto w-full max-w-[1440px] px-6 py-12 md:px-16 lg:px-24">
-    <div class="glass-panel overflow-hidden px-6 py-10 md:px-12 md:py-12 lg:px-16 lg:py-14">
-      <div class="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_1fr]">
-        <!-- Left: Intro + Message -->
-        <div class="glass-card flex flex-col gap-6 p-6 md:p-8">
-          <div class="glass-chip w-max text-xs uppercase tracking-[0.35em] text-softwhite/70">
-            Let’s build
-          </div>
-          <p class="text-lg font-semibold leading-relaxed text-softwhite md:text-xl">
-            Looking for a Flutter or full-stack engineer? Let’s talk.
-          </p>
-          <div class="glass-divider"></div>
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="mailto:hengsoth68@gmail.com"
-              class="glass-chip text-[0.75rem] font-semibold uppercase tracking-[0.3em] text-softwhite/80"
-            >
-              Email Me
-            </a>
-            <a
-              href="tel:+855966815223"
-              class="glass-chip text-[0.75rem] font-semibold uppercase tracking-[0.3em] text-softwhite/80"
-            >
-              Call Now
-            </a>
-            <a
-              href="/resume/Heng_RatanakVisoth_CV.pdf"
-              download
-              class="glass-chip text-[0.75rem] font-semibold uppercase tracking-[0.3em] text-main"
-            >
-              Download CV
-            </a>
-          </div>
+  <section id="contact" class="w-full pb-10 md:pb-16">
+    <div class="mx-auto w-full max-w-[1440px] px-6 py-10 md:px-16 md:py-16 lg:px-24 large:px-0">
+      <div>
+        <h2
+          class="max-w-4xl text-[clamp(2.2rem,5.6vw,4.75rem)] font-extrabold leading-[0.98] tracking-[-0.04em] [text-wrap:balance]"
+        >
+          Looking for a Flutter or full stack engineer? Let’s talk.
+        </h2>
+
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          <a
+            href="mailto:hengsoth68@gmail.com"
+            class="inline-flex items-center gap-2 rounded-md bg-main px-6 py-3 text-sm font-semibold text-background transition-colors duration-200 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main md:text-base"
+          >
+            <Icon icon="solar:mailbox-bold" class="h-5 w-5" />
+            Email me
+          </a>
+          <a
+            href="tel:+855966815223"
+            class="inline-flex items-center gap-2 rounded-md border border-white/15 px-6 py-3 text-sm font-semibold text-softwhite transition-colors duration-200 hover:border-main hover:text-main focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main md:text-base"
+          >
+            <Icon icon="solar:phone-bold" class="h-5 w-5" />
+            Call
+          </a>
+          <a
+            href="/resume/Heng_RatanakVisoth_CV.pdf"
+            download
+            class="inline-flex items-center gap-2 px-3 py-3 text-sm font-semibold text-softwhite/70 transition-colors duration-200 hover:text-main focus-visible:outline focus-visible:outline-2 focus-visible:outline-main md:text-base"
+          >
+            <Icon icon="solar:download-square-broken" class="h-5 w-5" />
+            Download CV
+          </a>
         </div>
 
-        <!-- Right: Contact + Location + Language -->
-        <div class="glass-card grid gap-y-6 p-6 md:p-8">
-          <!-- Contact Info -->
-          <div>
-            <h4 class="text-lg font-semibold uppercase text-softwhite md:text-2xl">Contact Me</h4>
-            <div class="mt-3 space-y-2 text-sm text-softwhite/80 md:text-base">
-              <p>
-                <a href="tel:+855966815223" class="hover:text-main">+855 (0) 96 681 5223</a>
-              </p>
-              <p>
-                <a href="mailto:hengsoth68@gmail.com" class="hover:text-main"
-                  >hengsoth68@gmail.com</a
-                >
-              </p>
-            </div>
-          </div>
-
-          <!-- Location and Language -->
-          <div class="grid gap-6 md:grid-cols-2">
-            <!-- Location -->
-            <div>
-              <h4 class="text-lg font-semibold uppercase text-softwhite md:text-2xl">Location</h4>
-              <p class="mt-2 text-sm text-softwhite/80 md:text-base">Phnom Penh, Cambodia</p>
-            </div>
-
-            <!-- Languages -->
-            <LanguageSelector />
+        <div
+          class="mt-16 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-sm text-softwhite/45 md:mt-24"
+        >
+          <p>Heng Ratanak Visoth, Phnom Penh, Cambodia</p>
+          <div class="flex items-center gap-1">
+            <a
+              v-for="item in socialLinks"
+              :key="item.label"
+              :href="item.url"
+              :aria-label="item.label"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors duration-200 hover:text-main focus-visible:outline focus-visible:outline-2 focus-visible:outline-main"
+            >
+              <font-awesome-icon :icon="item.icon" class="h-[18px] w-[18px]" />
+            </a>
           </div>
         </div>
       </div>
@@ -69,5 +57,12 @@
 </template>
 
 <script setup lang="ts">
-import LanguageSelector from '@/components/LanguageSelector.vue'
+import { Icon } from '@iconify/vue'
+import { socail } from '../../data/socail'
+
+const socialLinks = [
+  { label: 'LinkedIn', icon: ['fab', 'linkedin'], url: socail.linkedin.url },
+  { label: 'GitHub', icon: ['fab', 'github'], url: socail.github.url },
+  { label: 'Telegram', icon: ['fab', 'telegram'], url: socail.telegram.url }
+]
 </script>

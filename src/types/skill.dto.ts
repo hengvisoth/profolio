@@ -1,4 +1,5 @@
 export interface skillType {
     name: string;
-    icon:string;
+    layer: 'app' | 'web' | 'api' | 'data' | 'infra';
+    icon: string;
 }
